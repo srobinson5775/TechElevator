@@ -26,6 +26,9 @@ public class Exercises {
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods?
         */
+		int raccoonsInTheWoods = 3;
+		int raccoonsWhoGoHome = 2;
+		int remainingRaccoons = raccoonsInTheWoods - raccoonsWhoGoHome;
 
 
         /* Exercise 4
@@ -67,6 +70,10 @@ public class Exercises {
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find?
         */
+		int quarterCount = 1;
+		int dimeCount = 1;
+		int nickelCount = 2;
+		double totalCents = (quarterCount * 0.25d) + (dimeCount * 0.10d) + (nickelCount * 0.05d);
 
 
         /* Exercise 11
