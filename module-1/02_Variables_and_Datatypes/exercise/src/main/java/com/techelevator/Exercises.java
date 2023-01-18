@@ -34,36 +34,54 @@ public class Exercises {
         /* Exercise 4
         4. There are 5 flowers and 3 bees. How many less bees than flowers?
         */
+		int numberOfFlowers = 5;
+		int numberOfBees = 3;
+		int beesVsFlowers = numberOfFlowers - numberOfBees;
 
 
         /* Exercise 5
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now?
         */
+		int lonelyPigeon = 1;
+		int friendlyPigeon = 1;
+		int totalNumOfPigeon = lonelyPigeon + friendlyPigeon;
 
 
         /* Exercise 6
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now?
         */
+		int oldOwls = 3;
+		int newOwls = 2;
+		int totalNumOfOwls = oldOwls + newOwls;
 
 
         /* Exercise 7
         7. 2 beavers were working on their home. 1 went for a swim. How many
         beavers are still working on their home?
         */
+		int workingBeavers = 2;
+		int swimmingBeavers = 1;
+		int beaversRemaining = workingBeavers + swimmingBeavers;
 
 
         /* Exercise 8
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all?
         */
+		int sittingToucans = 2;
+		int newToucan = 1;
+		int totalNumOfToucans= sittingToucans + newToucan;
 
 
         /* Exercise 9
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts?
         */
+		int numberOfSquirrels = 4;
+		int numberOfNuts = 2;
+		int squirrelsVsNuts = numberOfSquirrels - numberOfNuts;
 
 
         /* Exercise 10
