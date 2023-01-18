@@ -63,7 +63,7 @@ public class Exercises {
         */
 		int workingBeavers = 2;
 		int swimmingBeavers = 1;
-		int beaversRemaining = workingBeavers + swimmingBeavers;
+		int numberOfBeaversLeft= workingBeavers - swimmingBeavers;
 
 
         /* Exercise 8
@@ -100,12 +100,19 @@ public class Exercises {
         Mrs. Flannery's class bakes 17 muffins. How many muffins does first
         grade bake in all?
         */
+		int briersClass = 18;
+		int mcAdamsClass = 20;
+		int flannerysClass = 17;
+		int totalNumberOfMuffins = briersClass + mcAdamsClass + flannerysClass;
 
 
         /* Exercise 12
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
         */
+		int yoyoCount = 1;
+		int whistleCount = 1;
+		double totalSpent = (yoyoCount * 0.24d) + (whistleCount * 0.14d);
 
 
         /* Exercise 13
@@ -113,6 +120,9 @@ public class Exercises {
         and 10 mini marshmallows.How many marshmallows did she use
         altogether?
         */
+		int largeMarshmellows = 8;
+		int miniMarshmellows = 10;
+		int totalNumberOfMarshmellows = largeMarshmellows + miniMarshmellows;
 
 
         /* Exercise 14
@@ -120,30 +130,44 @@ public class Exercises {
         Elementary School received 17 inches of snow. How much more snow
         did Mrs. Hilt's house have?
         */
+		int snowAthiltsHouse = 29;
+		int snowAtBrecknockSchool = 17;
+		int snowInchDifference = snowAthiltsHouse - snowAtBrecknockSchool;
 
 
         /* Exercise 15
         15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2.50 on a pencil
         case. How much money does she have left?
         */
+		int numberOfToyTrucks = 1;
+		int numberOfPencilCase = 1;
+		int startingBalance = 10;
+		double endingBalance = startingBalance - (numberOfToyTrucks * 3) - (numberOfPencilCase * 2.50);
 
 
         /* Exercise 16
         16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
         marbles does he have now?
         */
+		int marblesOwned = 16;
+		int marblesThatWereLost = 7;
+		int marblesThatAreLeft = marblesOwned - marblesThatWereLost;
 
 
         /* Exercise 17
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
         */
+		int seashellsOwned = 19;
+		int collectionOfSeashells = 25;
+		int seashellsNeeded = collectionOfSeashells - seashellsOwned;
 
 
         /* Exercise 18
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
+		
 
 
         /* Exercise 19
