@@ -6,7 +6,7 @@ public class Lecture {
     it so that it returns something other than a 1.
     */
     public int returnNotOne() {
-        return 1;
+        return 2;
     }
 
     /*
@@ -14,20 +14,20 @@ public class Lecture {
     it so that it returns something other than a 0.5.
     */
     public double returnNotHalf() {
-        return 0.5;
+        return 1.5;
     }
 
     /*
     3. This method needs to return a String. Fix it to return a valid String.
     */
     public String returnName() {
-        return null;
+        return "Valid String";
     }
 
     /*
     4. This method currently returns an int. Change it so that it returns a double.
     */
-    public int returnDoubleOfTwo() {
+    public double returnDoubleOfTwo() {
         return 2;
     }
 
@@ -35,8 +35,8 @@ public class Lecture {
     5. This method should return the language that you're learning. Change
     it so that it does that.
     */
-    public boolean returnNameOfLanguage() {
-        return false;
+    public String returnNameOfLanguage() {
+        return "Java";
     }
 
     /*
@@ -45,9 +45,11 @@ public class Lecture {
     */
     public boolean returnTrueFromIf() {
         if (true) {
-            return false;
+            System.out.println("Speed is within target range");
+            return true;
         }
 
+        System.out.println("ALWAYS log request made to this method and log it....returning program flow back to method caller ");
         return false;
     }
 
@@ -68,12 +70,16 @@ public class Lecture {
     greater than 5 and returns true if it is.
     */
     public boolean returnTrueWhenGreaterThanFive(int number) {
-        if (number > 5) {
+        boolean result = false;
 
+        if (number > 5) {
+            result = true;
+            //do not need else statement because its already starting false.
         } else {
+            result = false;
 
         }
-        return false;
+        return result;
     }
 
     /*
@@ -129,7 +135,7 @@ public class Lecture {
     14. Write an if statement that checks if the parameter number is either equal to or greater than 18. Return "Adult" if it is or "Minor" if it's not.
     */
     public String returnAdultOrMinor(int number) {
-        if (true) {
+        if (number >= 18) {
             return "Adult";
         } else {
             return "Minor";
@@ -140,7 +146,7 @@ public class Lecture {
     15. Now, do it again with a different boolean opeation.
     */
     public String returnAdultOrMinorAgain(int number) {
-        if (true) {
+        if (number > 17) {
             return "Adult";
         } else {
             return "Minor";
@@ -151,13 +157,16 @@ public class Lecture {
     16. Return as above, but also return "Teen" if the number is between 13 and 17 inclusive.
     */
     public String returnAdultOrMinorOrTeen(int number) {
-        if (true) {
-            return "Adult";
-        } else if (true) {
-            return "Teen";
+        String result = "Minor";
+
+        if (number > 17) {
+            result = "Adult";
+        } else if (number >= 13) {
+            result = "Teen";
         } else {
-            return "Minor";
+            result = "Minor";
         }
+        return result;
     }
 
 }

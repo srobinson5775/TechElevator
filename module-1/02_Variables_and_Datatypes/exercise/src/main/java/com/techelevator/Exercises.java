@@ -358,7 +358,7 @@ public class Exercises {
         */
 		int totalNumberOfCupcakes = 100;
 		int numberOfChildren = 8;
-		int cupcakesPerChild = totalNumberOfCupcakes / numberOfChildren ;
+		double cupcakesPerChild = (double)totalNumberOfCupcakes / (double)numberOfChildren;
 
 
         /* Exercise 40
@@ -366,6 +366,9 @@ public class Exercises {
         tiny glass jars. If each jar is to contain six cookies, how many
         cookies will not be placed in a jar?
         */
+		int numberOfCookiesMade = 47;
+		int numberOfCookiesPerJar = 6;
+		double cookiesLeftOutOfJar = (numberOfCookiesMade * 1) / (numberOfCookiesPerJar * 1);
 
 
         /* Exercise 41
@@ -373,6 +376,9 @@ public class Exercises {
         neighbors. If each neighbor received an equal number of croissants,
         how many will be left with Marian?
         */
+		int numberOfCrossiantsPrepared = 59;
+		int numberOfNeighboors = 8;
+		double crossiantsLeft = numberOfCrossiantsPrepared / numberOfNeighboors;
 
 
         /* Exercise 42
@@ -380,6 +386,9 @@ public class Exercises {
         place 12 cookies on a tray at a time, how many trays will she need to
         prepare 276 oatmeal cookies at a time?
         */
+		int totalAmountOfCookies = 276;
+		int cookiePerTray = 12;
+		int numberOfTraysNeeded = totalAmountOfCookies / cookiePerTray;
 
 
         /* Exercise 43
@@ -387,6 +396,9 @@ public class Exercises {
         bite-sized pretzels. If one serving is equal to 12 pretzels, how many
         servings of bite-sized pretzels was Marian able to prepare?
         */
+		int numberOfPretzels = 480;
+		int pretzelServingSize = 12;
+		int numberOfPretzelServings = numberOfPretzels / pretzelServingSize;
 
 
         /* Exercise 44
@@ -394,6 +406,9 @@ public class Exercises {
         orphanage. If two lemon cupcakes were left at home, how many
         boxes with 3 lemon cupcakes each were given away?
         */
+		int numberOfLemonCupcakes = 51;
+		int lemonCupcakesPerBox = 3;
+		int lemonCupcakesGivenAway = numberOfLemonCupcakes / lemonCupcakesPerBox;
 
 
         /* Exercise 45
@@ -401,6 +416,7 @@ public class Exercises {
         were served equally to 12 people, how many carrot sticks were left
         uneaten?
         */
+		int numberOfCarrotSticks = 74;
 
 
         /* Exercise 46
@@ -408,6 +424,9 @@ public class Exercises {
         them on the shelves in their bedroom. If every shelf can carry a
         maximum of 7 teddy bears, how many shelves will be filled?
         */
+		int amountOfTeddyBears = 98;
+		int maxShelfCapacity = 7;
+		int numberOfShelvesFilled = amountOfTeddyBears / maxShelfCapacity;
 
 
         /* Exercise 47
@@ -415,6 +434,9 @@ public class Exercises {
         them in an album. If an album can contain 20 pictures, how many
         albums will she need if there are 480 pictures?
         */
+		int picturesPerAlbum = 20;
+		int numberOfPictures = 480;
+		int numberOfAlbumsNeeded = numberOfPictures / picturesPerAlbum;
 
 
         /* Exercise 48
@@ -423,6 +445,9 @@ public class Exercises {
         cards, how many boxes were filled and how many cards are there in
         the unfilled box?
         */
+		int numberOfTradingCards = 94;
+		int amountOfCardsPerBox = 8;
+		int numberOfCardsInUnfilledBox = numberOfTradingCards / amountOfCardsPerBox;
 
 
         /* Exercise 49
@@ -430,6 +455,9 @@ public class Exercises {
         210 books to be distributed equally on the 10 shelves he repaired,
         how many books will each shelf contain?
         */
+		int booksToBeDistributed = 210;
+		int repairedShelves = 10;
+		int numberOfBooksPerShelf = booksToBeDistributed / repairedShelves;
 
 
         /* Exercise 50
