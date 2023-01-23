@@ -59,7 +59,7 @@ public class Lecture {
     */
     public boolean returnTrueWhenOneEqualsOne() {
         if (1 == 1) {
-            return false;
+            return true;
         }
 
         return false;
@@ -87,6 +87,9 @@ public class Lecture {
     How can we rewrite exercise 8 to have only one line of code?
     */
     public boolean returnTrueWhenGreaterThanFiveInOneLine(int number) {
+        if (number > 5){
+            return true;
+        }
         return false; // What can we put here that returns a boolean that we want?
     }
 
@@ -98,13 +101,13 @@ public class Lecture {
     */
     public int returnNumberAfterAddThreeAndAddFive(int number, boolean addThree, boolean addFive) {
         if (addThree) {
-            number = number + 1;
+            number = number + 3;
         }
 
         // We can't use an else here. They could both be true, so we have to check each one.
 
         if (addFive) {
-            number += 1;
+            number = number + 5;
         }
 
         return number;
@@ -114,13 +117,18 @@ public class Lecture {
     11. Write an if statement that returns "Fizz" if the parameter is 3 and returns an empty String for anything else.
     */
     public String returnFizzIfThree(int number) {
-        return "";
+        if (number == 3)
+        {
+            return "Fizz";
+        } else {
+            return "";
+        }
     }
-
     /*
     12. Now write the above using the Ternary operator ?:. If you're not sure what this is, you can Google it.
     */
     public String returnFizzIfThreeUsingTernary(int number) {
+
         return "";
     }
 
@@ -128,6 +136,11 @@ public class Lecture {
     13. Write an if/else statement that returns "Fizz" if the parameter is 3, "Buzz" if the parameter is 5 and an empty String for anything else.
     */
     public String returnFizzOrBuzzOrNothing(int number) {
+        if (number == 3){
+            return "Fizz";
+        } if (number == 5){
+            return "Buzz";
+        } else
         return "";
     }
 

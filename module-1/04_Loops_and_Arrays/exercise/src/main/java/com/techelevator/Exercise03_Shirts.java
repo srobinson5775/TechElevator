@@ -17,7 +17,10 @@ public class Exercise03_Shirts {
     buildOrder() → ['S', 'S', 'S', 'M', 'M', 'L']
      */
     public char[] buildOrder() {
-        return new char[] {};    
+        char[] tshirtOrder = { 'S', 'S', 'S', 'M', 'M', 'L'};
+
+
+        return tshirtOrder;
     }
 
     /*
@@ -36,7 +39,11 @@ public class Exercise03_Shirts {
     buildBulkOrder(4) → ['S', 'M', 'L', 'S']
     buildBulkOrder(0) → []
      */
-    public char[] buildBulkOrder(int numberOfShirts) { 
+    public char[] buildBulkOrder(int numberOfShirts) {
+        for ()
+
+
+
         return new char[] {};    
     }
 

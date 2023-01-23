@@ -17,17 +17,24 @@ public class Exercise03_ShippingTotal {
      * Scamper Shipping Company charges $0.50 per pound for items up to and
      * including 40 pounds. It charges $0.75 per pound for items over 40 pounds.
      * Return the shipping rate when provided a weight in pounds.
-     * 
+     *
      * Examples:
      * calculateShippingRate(10) ➔ 0.50
      * calculateShippingRate(25) ➔ 0.50
      * calculateShippingRate(40) ➔ 0.50
      * calculateShippingRate(45) ➔ 0.75
      */
-    public double calculateShippingRate(int weightPounds) {
-        return 0.0;
-    }
 
+    public double calculateShippingRate(int weightPounds) {
+        double shippingRate = .5;
+
+        if (weightPounds < 40) {
+            shippingRate = .50;
+        } else if (weightPounds > 40 ) {
+            shippingRate = .75;
+        }
+        return shippingRate;
+    }
     /*
      * Scamper Shipping Company charges $0.50 per pound for items up to and
      * including 40 pounds. It charges $0.75 per pound for items over 40 pounds.
@@ -43,7 +50,11 @@ public class Exercise03_ShippingTotal {
      * calculateShippingTotal(45) ➔ 33.75
      */
     public double calculateShippingTotal(int weightPounds) {
-        return 0.0;
+        double shippingTotal = (.5 * weightPounds);
+        if (weightPounds > 40) {
+            shippingTotal = (.75 * weightPounds);
+        }
+            return shippingTotal;
     }
 
     /*
@@ -53,7 +64,7 @@ public class Exercise03_ShippingTotal {
      * weight in pounds and a boolean value for hasDiscount.
      * 
      * You may use any previous methods in your solution.
-     * 
+     *
      * Examples:
      * calculateShippingTotal(10, false) ➔ 5.0
      * calculateShippingTotal(10, true) ➔ 4.5
@@ -65,7 +76,20 @@ public class Exercise03_ShippingTotal {
      * calculateShippingTotal(45, true) ➔ 30.375
      */
     public double calculateShippingTotal(int weightPounds, boolean hasDiscount) {
-        return 0.0;
+
+//        double shippingTotal = (.5 * weightPounds);
+//        if (weightPounds > 40) {
+//            shippingTotal = (.75 * weightPounds);
+//        }
+//        if (hasDiscount == true) {
+//            shippingTotal = shippingTotal * .9;
+//        }
+        double shippingTotal = calculateShippingTotal(weightPounds);
+        if (hasDiscount == true) {
+            shippingTotal = shippingTotal * .9;
+        }
+
+        return shippingTotal;
     }
 
 }
