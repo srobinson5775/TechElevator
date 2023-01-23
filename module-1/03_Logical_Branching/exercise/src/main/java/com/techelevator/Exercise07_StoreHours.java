@@ -60,18 +60,15 @@ public class Exercise07_StoreHours {
     isStoreOpen(12, 'S') ➔ false
      */
     public boolean isStoreOpen(int currentHour, char currentDay) {
-        boolean storeOpen;
-        if (currentHour >= 8 && currentHour <=16) {
+        boolean storeOpen = false;
+        boolean dayOpen = false;
+        boolean hourOpen = false;
+        dayOpen = (currentDay == 'M' || currentDay =='W' ||currentDay == 'F');
+        hourOpen = (currentHour >= 8 && currentHour < 17);
+
+         if (dayOpen && hourOpen) {
             storeOpen = true;
-        } if (currentDay == 'M' || currentDay == 'W' || currentDay == 'F') {
-            storeOpen = true;
-        } else {
-            storeOpen = false;
-        }
-
-
-
-        return storeOpen;
+        } return storeOpen;
     }
 
 
@@ -89,6 +86,22 @@ public class Exercise07_StoreHours {
     isStoreOpen(9, 'S', true) ➔ true
      */
     public boolean isStoreOpen(int currentHour, char currentDay, boolean isSummer) {
-        return false;
+        boolean storeOpen = false;
+        boolean dayOpen = false;
+        boolean hourOpen = false;
+        boolean summerWednesday = false;
+        boolean summerSaturday = false;
+        dayOpen = (currentDay == 'M' || currentDay =='W' ||currentDay == 'F');
+        hourOpen = (currentHour >= 8 && currentHour < 17);
+        summerWednesday = (currentDay == 'W' && (currentHour >= 8 && currentHour < 20));
+        summerSaturday = (currentDay == 'S' && (currentHour >=9 && currentHour < 15));
+//                     = (  t/f             &&  (      t/f      &&          t/f))
+        if (!isSummer && dayOpen && hourOpen) {
+            storeOpen = true;
+        } else if ((isSummer && (dayOpen && hourOpen)) || (isSummer && summerWednesday) || (isSummer && summerSaturday)) {
+//                (             t/f                    ||           t/f                 ||           t/f              )
+            storeOpen = true;
+        }
+        return storeOpen;
     }
 }

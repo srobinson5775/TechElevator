@@ -33,13 +33,14 @@ public class Tutorial {
 
                 // Step Four: Determine if the user should bring a coat. (when the temperature < 65°F)
                 if (highTemperatureF < 65) {
-                        System.out.print("* Dont forget to bring a coat today.");
+                        System.out.print("* Don't forget to bring a coat today.");
                 }
 
 
 
                 // Step Five: Determine if the user should bring an umbrella
                 boolean isAboveFreezing = highTemperatureF > FREEZING_TEMPERATURE_F;
+
                 if (precipitationExpected && isAboveFreezing) {
                         System.out.println("* Be sure to pack an umbrella!");
                 }
