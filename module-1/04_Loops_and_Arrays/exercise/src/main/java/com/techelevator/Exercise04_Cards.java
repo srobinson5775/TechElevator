@@ -25,7 +25,14 @@ public class Exercise04_Cards {
     getFirstCard(["K-C", "Q-D", "J-H", "10-S", "Q-C"]) → "K-C"
     */
     public String getFirstCard(String[] hand) {
-        return "";
+
+        String[] clubs = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+
+       // String[] clubs = new String[] { "1-C", "2-C","3-C", "4-C", "5-C", "6-C", "7-C", "8-C", "9-C", "10-C", "J-C", "Q-C", "K-C", "A-C" };
+       // String[] hearts = new String[] { "1-H", "2-H", "3-H", "4-H", "5-H", "6-H", "7-H", "8-H", "9-H", "10-H", "J-H", "Q-H,", "K-H", "A-H"};
+       // String[] diamonds = new String[] {};
+       // String[] spades = new String[]
+        return clubs [0];
     }
 
     /*
