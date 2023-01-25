@@ -10,7 +10,13 @@ public class StringMethodsDemo {
      middlePart("Practice") → "ct"
      */
     public String middlePart(String str) {
-        return null;
+        String result;
+        int len = str.length(); //naming the variable len the entire length of whats being passed in
+        result = str.substring(len / 2 - 1, len /2 + 1);
+
+
+
+        return result;
     }
 
 
@@ -22,7 +28,15 @@ public class StringMethodsDemo {
 	 repeatX("xxxxx") → true
 	 */
     public boolean repeatX(String str) {
-       return false;
+        boolean result = false; //set result to false right off the bat
+        int firstX = str.indexOf('x'); // gonna find the first value of x as a int
+        if (firstX < str.length() - 1); {
+            result = str.charAt(firstX +1) == 'x';
+        }
+
+
+
+       return result;
     }
 
 

@@ -9,7 +9,10 @@ public class Exercises {
 	 helloName("X") → "Hello X!"
 	 */
 	public String helloName(String name) {
-		return null;
+		String result = "Hello " + name + "!";
+
+
+		return result;
 	}
 
 	/*
@@ -20,7 +23,10 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return null;
+		String result = a + b + b + a;
+
+
+		return result;
 	}
 
 	/*
@@ -32,9 +38,10 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return null;
-	}
+		String html = '<' + tag +'>' + word + '<' + '/' + tag + '>';
 
+		return html;
+	}
 	/*
 	 Given an "out" string length 4, such as "<<>>", and a word, return a new string where the word is in the
 	 middle of the out string, e.g. "<<word>>". Note: use str.substring(i, j) to extract the String starting
@@ -44,8 +51,11 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+		String middleStart = out.substring(0,2) + word +out.substring(2);
+
+		return middleStart;
 	}
+
 
 	/*
 	 Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string
@@ -67,6 +77,9 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
+
+
+
 		return null;
 	}
 
@@ -77,7 +90,9 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return null;
+		String halfOfWord = str.substring(0, str.length()/2);
+
+		return halfOfWord;
 	}
 
 	/*
@@ -88,7 +103,10 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return null;
+		String middleLetters = str.substring(1, str.length()-1);
+
+
+		return middleLetters;
 	}
 
 	/*
@@ -100,9 +118,15 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		return null;
+		String result = a + b + a;
+		if (a.length() > 2) {
+			result = b + a + b;
+		}
+		if (b.length() > 2) {
+			result = b + a + b;
+		}
+		return result;
 	}
-
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will
 	 be at least length 1.
@@ -111,7 +135,10 @@ public class Exercises {
 	 nonStart("shotl", "java") → "hotlava"
 	 */
 	public String nonStart(String a, String b) {
-		return null;
+		String result = a.substring(1, a.length()) + b.substring(1, b.length());
+
+
+		return result;
 	}
 
 	/*
@@ -155,6 +182,10 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {
+
+
+
+
 		return null;
 	}
 
