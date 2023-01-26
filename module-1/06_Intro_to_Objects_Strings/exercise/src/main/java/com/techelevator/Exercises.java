@@ -65,7 +65,12 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+		String extraLetters = str.substring(str.length()-2);
+
+
+
+
+		return extraLetters + extraLetters + extraLetters;
 	}
 
 	/*
@@ -77,10 +82,16 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
+		String firstLetters = str;
+		if (firstLetters.length() < 2) {
+			firstLetters = str;
+		} else if (firstLetters.length() > 2) {
+			firstLetters = firstLetters.substring(0,2);
+		}
 
 
 
-		return null;
+		return firstLetters;
 	}
 
 	/*
@@ -117,15 +128,9 @@ public class Exercises {
 	 comboString("hi", "Hello") → "hiHellohi"
 	 comboString("aaa", "b") → "baaab"
 	 */
-	public String comboString(String a, String b) {
-		String result = a + b + a;
-		if (a.length() > 2) {
-			result = b + a + b;
-		}
-		if (b.length() > 2) {
-			result = b + a + b;
-		}
-		return result;
+	public String comboString(String a, String b) {;
+
+		return a + b + a ;
 	}
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will
@@ -149,7 +154,10 @@ public class Exercises {
 	 left2("Hi") → "Hi"
 	 */
 	public String left2(String str) {
-		return null;
+		str = str.substring(2) + str.substring(0,2);
+
+
+		return str;
 	}
 
 	/*
@@ -160,6 +168,9 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
+
+
+
 		return null;
 	}
 
@@ -171,7 +182,14 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
+		if (front){
+			str = str.substring(0,1);
+		} else {
+			str = str.substring(str.length()-1);
+		}
+
+
+		return str ;
 	}
 
 	/*
@@ -182,11 +200,12 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {
+		String End2 = str.substring(1, str.length()-1) ;
 
 
 
 
-		return null;
+		return End2;
 	}
 
 	/*
@@ -197,7 +216,14 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+		String result;
+		int len = str.length();
+		result = str.substring(len/2 -1, len / 2 + 1);
+
+
+
+
+		return result;
 	}
 
 	/*
@@ -207,7 +233,12 @@ public class Exercises {
 	 endsLy("oddy") → false
 	 */
 	public boolean endsLy(String str) {
-		return false;
+		if (str.endsWith("ly")) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	/*
@@ -241,6 +272,8 @@ public class Exercises {
 	 middleThree("solving") → "lvi"
 	 */
 	public String middleThree(String str) {
+		int len = str.length();
+
 		return null;
 	}
 
@@ -253,8 +286,11 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
-		return false;
-	}
+		if (str.length() == 3 && str.equals("bad")) {
+			return true;
+		} else {
+			return false;
+		}	}
 
 	/*
 	 Given a string and a non-negative int n, return a larger string that is n copies of the original string.
@@ -263,7 +299,8 @@ public class Exercises {
 	 stringTimes("Hi", 1) → "Hi"
 	 */
 	public String stringTimes(String str, int n) {
-		return null;
+
+		return str + (n);
 	}
 
 	/*

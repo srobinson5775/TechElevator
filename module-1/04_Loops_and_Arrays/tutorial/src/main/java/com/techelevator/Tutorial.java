@@ -5,28 +5,25 @@ public class Tutorial {
     public static void main(String[] args) {
 
         // write your code here
-        int i;
-        for (i = 0; i< 5; i++) {
+        int i;// for a loop counter a single character is commonly used
+        for (i = 0; i <= 5; i++) {
+            System.out.println(i);
+
+        }//i = 0: the INITIALIZER It sets the initial state before the loop runs. Sets the loop counter to the intial value you want to use.
+        // i <= 5: the CONDITION the loop will run as long as this expression = true
+        // i ++ : the ITERATOR After the loop runs, this expression is evaluated. The ++ part means increment i by 1 each time
+
+        //the loop above runs 6 times and evaluates 6 times for "i" going 0-5
+        //if 0 is less than 5 go up an index
+        //print each index
+
+        for (i = 10; i >= 0; i--) { // "i" is assigned 10 at the start of the loop
+            //as long as i is greater than or equal to 0 the loop will run.
+            //after each loop it goes down by 1
             System.out.println(i);
         }
-        int[] forecastTemperatures = new int[5];
-        forecastTemperatures[0] = 72;
-        forecastTemperatures[1] = 78;
-        forecastTemperatures[2] = 58;
-        forecastTemperatures[3] = 79;
-        forecastTemperatures[4] = 74;
 
-        forecastTemperatures[2] = forecastTemperatures[2] + 10;
         //you can use forecastTemperatures[2] += 10;
-        for (i = 0; i < forecastTemperatures.length; i++) {
-            System.out.println(forecastTemperatures[i]);
-        }
-        int highestTemperatureValue = forecastTemperatures[0];
-        int highestTemperatureIndex = 0;
-        for (int j = 1; j < forecastTemperatures.length; j++) {
-            if (forecastTemperatures[j] > highestTemperatureValue) {
-                highestTemperatureValue = forecastTemperatures[j];
-                highestTemperatureIndex = j;
             }
         }
 
@@ -34,5 +31,5 @@ public class Tutorial {
 
 
 
-    }
-}
+
+

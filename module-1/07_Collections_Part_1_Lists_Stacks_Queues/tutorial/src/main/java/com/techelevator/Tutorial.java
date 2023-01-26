@@ -11,18 +11,33 @@ public class Tutorial {
     public static void main(String[] args) {
 
     	// Step One: Declare a List
+        List<String> nameList = new ArrayList<>();
 
     	
     	// Step Two: Add values to a List
+        nameList.add("Ada");
+        nameList.add("Grace");
+        nameList.add("Margret");
+        nameList.add("Adele");
+
 
     	
     	// Step Three: Looping through a List in a for loop
+        for (int i = 0; i <nameList.size(); i++) {
+            System.out.println("The name at index " + i + " is " + nameList.get(i));
+
+        }
 
     	
     	// Step Four: Remove an item
+        nameList.remove(0);
 
     	
     	// Step Five: Looping through List in a for-each loop
+
+        for (String name : nameList) {
+            System.out.println("Name: " + name);
+        }
 
     }
 
