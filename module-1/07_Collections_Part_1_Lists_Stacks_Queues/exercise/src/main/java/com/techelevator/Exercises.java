@@ -34,12 +34,17 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
+	String[] fruitsArray = stringList.toArray(new String [0]);
+
+	for (int i = 0; i <fruitsArray.length; i++){
+		System.out.println(fruitsArray);
+	}
 
 
 
 
 		
-		return null;
+		return fruitsArray;
 	}
 
 	/*
@@ -50,8 +55,21 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		//1. create a list to hold the words that are not four letters
+		List<String> allButFour = new ArrayList<>();
+		//2. get data from string array and add each element to your allbutfour list
+		for (int i = 0; i < stringArray.length; i++) {
+			//3. check to see if the length of the word in string array is not equal to four
+			//if true does not equal to four then add it to your allbutfor list
+			if (stringArray[i].length() != 4) {
+				allButFour.add(stringArray[i]);
+			}
+		}
+		return allButFour;
 	}
+
+
+
 
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
@@ -60,7 +78,15 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> listOfDoubles = new ArrayList<>();
+		for( int i = 0; i < intArray.length; i++) {
+			listOfDoubles.add(intArray[i] / 2.0);
+		}
+
+
+
+
+		return listOfDoubles;
 	}
 
 	/*
@@ -70,7 +96,17 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 81238
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		int largestOne = 0;
+		for( Integer currentNumber : integerList){
+			//if the current number is greater than largest one then largest one = current number
+			if (currentNumber > largestOne) {
+				largestOne = currentNumber;
+			}// how to get the lowest number
+		}
+
+
+
+		return largestOne;
 	}
 
 	/*
@@ -80,7 +116,16 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		List<Integer> onlyOddNumbers = new ArrayList<>();
+		for (int i = 0; i < integerArray.length; i++){
+			if (integerArray[i] % 2 == 0){
+				onlyOddNumbers.add(integerArray[i]);
+			}
+		}
+
+
+
+		return onlyOddNumbers;
 	}
 
 	/*
