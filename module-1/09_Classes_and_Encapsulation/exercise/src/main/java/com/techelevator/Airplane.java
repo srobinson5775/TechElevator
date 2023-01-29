@@ -41,7 +41,7 @@ public class Airplane {
         int availableFirstClassSeats = totalFirstClassSeats - bookedFirstClassSeats;
         int availableCoachSeats = totalCoachSeats- bookedCoachSeats;
 
-        if (forFirstClass) {
+        if (forFirstClass && totalFirstClassSeats > bookedFirstClassSeats) {
             totalNumberOfSeats = totalNumberOfSeats + bookedFirstClassSeats;
         } else if (!forFirstClass){
             totalNumberOfSeats = totalNumberOfSeats + bookedCoachSeats;
