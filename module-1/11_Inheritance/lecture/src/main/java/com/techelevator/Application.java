@@ -8,14 +8,34 @@ public class Application {
         System.out.println("Starting a general auction");
         System.out.println("-----------------");
 
-        Auction generalAuction = new Auction("Tech Elevator t-shirt");
+        //Auction generalAuction = new Auction("Tech Elevator t-shirt");
 
-        generalAuction.placeBid(new Bid("Josh", 1));
-        generalAuction.placeBid(new Bid("Fonz", 23));
-        generalAuction.placeBid(new Bid("Rick Astley", 13));
+        //generalAuction.placeBid(new Bid("Josh", 1));
+        //generalAuction.placeBid(new Bid("Fonz", 23));
+        //generalAuction.placeBid(new Bid("Rick Astley", 13));
         //....
         //....
         // This might go on until the auction runs out of time or hits a max # of bids
+
+
+       // System.out.println("Starting a Reserve Auction");
+       // System.out.println("-----------------");
+
+      //  ReserveAuction reserveAuction = new ReserveAuction("Tech Elevator Mug", 20);
+      //  reserveAuction.placeBid(new Bid("Tony Stark", 2));
+       // reserveAuction.placeBid(new Bid("Bruce Wayne", 10));
+        //reserveAuction.placeBid(new Bid("Joker", 22));
+
+
+
+        System.out.println("Starting a Buyout Auction");
+        System.out.println("-----------------");
+
+        BuyoutAuction buyoutAuction = new BuyoutAuction("Tech Elevator Painting", 200);
+        BuyoutAuction.placeBid(new Bid("Tony Stark", 150));
+        BuyoutAuction.placeBid(new Bid("Bruce Wayne", 165));
+        BuyoutAuction.placeBid(new Bid("Joker", 212));
+        BuyoutAuction.placeBid(new Bid("Joker", 212));
 
     }
 }

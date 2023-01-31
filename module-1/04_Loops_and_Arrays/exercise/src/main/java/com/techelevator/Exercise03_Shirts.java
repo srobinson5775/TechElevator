@@ -40,6 +40,9 @@ public class Exercise03_Shirts {
     buildBulkOrder(0) → []
      */
     public char[] buildBulkOrder(int numberOfShirts) {
+        char[] tshirtOrder = { 'S', 'M', 'L'};
+        int bulkOrder = numberOfShirts;
+        for (int i = 0; i < tshirtOrder.length; i++);
 
 
 
