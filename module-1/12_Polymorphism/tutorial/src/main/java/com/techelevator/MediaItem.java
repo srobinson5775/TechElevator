@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class MediaItem {
+public class MediaItem implements Purchasable{
     protected String title;
     protected double price;
 

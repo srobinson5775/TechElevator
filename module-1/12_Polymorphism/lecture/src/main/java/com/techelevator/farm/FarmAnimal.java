@@ -1,8 +1,12 @@
 package com.techelevator.farm;
 
-public class FarmAnimal {
+public class FarmAnimal implements Singable {
 	private String name;
 	private String sound;
+
+	public FarmAnimal(){
+
+	}//Default constructor has no parameters
 
 	public FarmAnimal(String name, String sound) {
 		this.name = name;
