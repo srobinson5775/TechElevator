@@ -6,6 +6,16 @@ public class CheckingAccount extends BankAccount {
         super(accountHolder, accountNumber, balance);
     }
 
+    @Override
+    public int getBalance() {
+        return super.getBalance();
+    }
+
+    @Override
+    public int transferTo(BankAccount destinationAccount, int transferAmount) {
+        return super.transferTo(destinationAccount, transferAmount);
+    }
+
     public CheckingAccount(String accountHolder, String accountNumber) {
         super(accountHolder, accountNumber);
     }
