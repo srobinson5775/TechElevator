@@ -16,8 +16,23 @@ public class OldMacdonald {
 						"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 		System.out.println();
 
+		Cow cow = new Cow();
+		cow.sleep(false);
+
+		Chicken chicken = new Chicken();
+		Pig pig = new Pig();
+
+		pig.sleep(false);
+		Tractor tractor = new Tractor();
+
+		Cat cat = new Cat();
+		cat.sleep(true);
+
+		//FarmAnimal farmAnimal = new FarmAnimal("CowChickenPigCat", "MooCluckOinkMeow");
+
+
 		Singable[] singables =
-				new Singable[] {new Cow(), new Chicken(), new Pig(), new Tractor()};
+				new Singable[] {cow, chicken, pig, cat, tractor};
 
 		for (Singable singable : singables) {
 			String name = singable.getName();

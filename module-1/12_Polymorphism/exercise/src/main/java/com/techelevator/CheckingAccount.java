@@ -6,12 +6,12 @@ public class CheckingAccount extends BankAccount {
         super(accountHolder, accountNumber, balance);
     }
 
-    @Override
+
     public int getBalance() {
         return super.getBalance();
     }
 
-    @Override
+
     public int transferTo(BankAccount destinationAccount, int transferAmount) {
         return super.transferTo(destinationAccount, transferAmount);
     }
@@ -20,7 +20,7 @@ public class CheckingAccount extends BankAccount {
         super(accountHolder, accountNumber);
     }
 
-    @Override
+
     public int withdraw(int amountToWithdraw) {
         // Only allow the withdraw if the balance isn't going to go below -$100
         if (getBalance() - amountToWithdraw > -100) {

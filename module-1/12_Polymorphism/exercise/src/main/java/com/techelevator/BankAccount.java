@@ -20,6 +20,12 @@ public class BankAccount implements Accountable {
         this.balance = balance;
     }
 
+    public int transferTo (BankAccount destinationAccount, int transferAmount){
+        withdraw(transferAmount);
+        destinationAccount.deposit(transferAmount);
+        return balance;
+    }
+
     public String getAccountHolderName() {
         return accountHolderName;
     }
@@ -41,10 +47,6 @@ public class BankAccount implements Accountable {
         balance = balance - amountToWithdraw;
         return balance;
     }
-    public int transferTo (BankAccount destinationAccount, int transferAmount){
-        withdraw(transferAmount);
-        destinationAccount.deposit(transferAmount);
-        return balance;
-    }
+
 
 }

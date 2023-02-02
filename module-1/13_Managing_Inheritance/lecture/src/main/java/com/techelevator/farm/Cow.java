@@ -13,4 +13,9 @@ public class Cow extends FarmAnimal implements Sellable {
 	public BigDecimal getPrice() {
 		return price;
 	}
+
+	@Override
+	public String eat(){
+		return "cow eating....";
+	}
 }

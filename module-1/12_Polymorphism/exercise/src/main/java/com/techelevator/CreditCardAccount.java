@@ -3,11 +3,18 @@ package com.techelevator;
 public class CreditCardAccount implements Accountable{
     private String accountHolder;
     private String accountNumber;
-    int debt = 0;
+    private int debt;
 
     public CreditCardAccount(String accountHolder, String accountNumber){
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
+    }
+    @Override
+    public int getBalance() {
+        return -debt;
+    }
+    public int getDebt() {
+        return debt;
     }
 
 
@@ -19,19 +26,14 @@ public class CreditCardAccount implements Accountable{
         return accountNumber;
     }
 
-    public int getDebt() {
+    public int pay(int amountToPay){
+        debt = debt - amountToPay;
         return debt;
     }
 
-    @Override
-    public int getBalance() {
-        return 0;
-    }
-
-    int pay(int amountToPay){
-        getBalance()
-
-        return newTotalAmountOwed;
+    public int charge(int amountToCharge){
+        debt = debt + amountToCharge;
+        return debt;
     }
 
 }
