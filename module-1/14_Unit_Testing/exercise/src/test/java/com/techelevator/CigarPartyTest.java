@@ -5,5 +5,7 @@ import org.junit.Test;
 public class CigarPartyTest {
 
     @Test
-    public void
+    public void MinimumCigarMoreThan40_True(){
+
+    }
 }

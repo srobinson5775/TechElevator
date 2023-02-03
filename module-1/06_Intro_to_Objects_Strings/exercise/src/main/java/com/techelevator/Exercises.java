@@ -128,7 +128,8 @@ public class Exercises {
 	 comboString("hi", "Hello") → "hiHellohi"
 	 comboString("aaa", "b") → "baaab"
 	 */
-	public String comboString(String a, String b) {;
+	public String comboString(String a, String b) {
+		a = a.substring(2) ;
 
 		return a + b + a ;
 	}
