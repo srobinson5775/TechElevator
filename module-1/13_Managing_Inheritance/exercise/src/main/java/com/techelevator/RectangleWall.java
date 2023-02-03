@@ -5,7 +5,7 @@ public class RectangleWall extends Wall{
     private int height;
 
     public RectangleWall(String name, String color, int length, int height){
-       super(name, color);
+       super (name, color);
         this.length = length;
         this.height = height;
     }
@@ -23,7 +23,7 @@ public class RectangleWall extends Wall{
     }
 
     @Override
-    public String toString() {
-        return "rectangle";
+    public String toString(){
+        return String.format(" rectangle", getName(), getLength(), getHeight());
     }
 }
