@@ -129,9 +129,14 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		a = a.substring(2) ;
+		String result = "";
+		if(a.length() < b.length()){
+			result = a + b + a;
+		} else {
+			result = b + a + b;
+		}
 
-		return a + b + a ;
+		return result ;
 	}
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will
@@ -169,10 +174,13 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
+		String result = "";
+		int strLength = str.length();
+		result = str.substring(strLength - 2) + str.substring(0, strLength - 2);
 
 
 
-		return null;
+		return result;
 	}
 
 	/*
@@ -201,12 +209,14 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {
-		String End2 = str.substring(1, str.length()-1) ;
+		String result = "";
+		int strLength = str.length();
+		result = str.substring(1) + str.substring(1,strLength - 1 );
 
 
 
 
-		return End2;
+		return result;
 	}
 
 	/*
@@ -250,7 +260,10 @@ public class Exercises {
 	 nTwice("Chocolate", 1) → "Ce"
 	 */
 	public String nTwice(String str, int n) {
-		return null;
+		String result = "";
+		result = str.substring(0, n) + str.substring(str.length()-n);
+
+		return result;
 	}
 
 	/*
@@ -262,7 +275,10 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int n) {
-		return null;
+		if(n < 0 || n + 2> str.length()){
+			return str.substring(0, 2);
+		} else
+		return str.substring(n, n + 2);
 	}
 
 	/*
@@ -273,9 +289,12 @@ public class Exercises {
 	 middleThree("solving") → "lvi"
 	 */
 	public String middleThree(String str) {
-		int len = str.length();
+		int strLength = str.length();
+		if (strLength == 3){
+			return str;
+		}
 
-		return null;
+		return str;
 	}
 
 	/*
@@ -287,11 +306,11 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
-		if (str.length() == 3 && str.equals("bad")) {
+		String result = "";
+		if(str.length() == 3 && str.substring(0, 3).equals("bad")){
 			return true;
-		} else {
-			return false;
-		}	}
+		} else return false;
+	}
 
 	/*
 	 Given a string and a non-negative int n, return a larger string that is n copies of the original string.
@@ -374,7 +393,15 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		String result = "";
+		if (str.substring(0).equals("x")){
+			result = str.substring(0, str.length());
+		}
+		if (str.substring(str.length()-1).equals("x")){
+			result = str.substring(str.length()-1);
+		}
+
+		return result;
 	}
 
 	/*

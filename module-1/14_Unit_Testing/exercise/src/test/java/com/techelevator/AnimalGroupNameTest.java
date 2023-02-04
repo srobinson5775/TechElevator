@@ -7,6 +7,7 @@ public class AnimalGroupNameTest {
 
 @Test
     public void ProvideAnimalName_ExpectHerdName(){
+    //Arrange
     AnimalGroupName animalGroupName = new AnimalGroupName();
     String animalName = "rhino";
     String expectedHerdName = "Crash";
@@ -18,6 +19,7 @@ public class AnimalGroupNameTest {
 
 @Test
     public void ProvideAnimalMixedCase_ExpectHerdName(){
+    //Act
     AnimalGroupName animalGroupName = new AnimalGroupName();
     String animalName = "RhinO";
     String expectedHerdName = "Crash";
@@ -28,6 +30,7 @@ public class AnimalGroupNameTest {
 }
 @Test
     public void NullOrMispelledAnimalName_ExpectedHerdName(){
+    //Assert
     AnimalGroupName animalGroupName = new AnimalGroupName();
     String animalName = "Ronin";
     String animalName2 = null;

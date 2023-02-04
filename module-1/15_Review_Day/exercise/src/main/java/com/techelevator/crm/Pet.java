@@ -38,16 +38,19 @@ public class Pet {
     }
 
     public String listVaccinations(){
-        String vaccinationString ="";
-        for (String vaccinationName : vaccinations){
-            if( vaccinations.indexOf() < vaccinations.size()- 1 ){
+        String allVaccinations ="";
+        for (int i = 0; i < vaccinations.size(); i++){
+            if(i != vaccinations.size()-1){
+                allVaccinations += vaccinations.get(i) + ",";
 
+            } else {
+                allVaccinations += vaccinations.get(i);
             }
 
 
         }
 
-        return vaccinationString;
+        return allVaccinations;
     }
 
 }
