@@ -319,8 +319,11 @@ public class Exercises {
 	 stringTimes("Hi", 1) → "Hi"
 	 */
 	public String stringTimes(String str, int n) {
-
-		return str + (n);
+		String result = "";
+		for (int i = 0; i < n; i++){
+			result = result+ str;
+		}
+		return result;
 	}
 
 	/*
@@ -331,7 +334,19 @@ public class Exercises {
 	 frontTimes("Abc", 3) → "AbcAbcAbc"
 	 */
 	public String frontTimes(String str, int n) {
-		return null;
+		String result = "";
+		int strLength = str.length();
+		if (strLength <= 3) {
+			for (int i= 0; i < n; i++){
+				result = result + str;
+			}
+		} else {
+			for (int i = 0; i < n; i++){
+				result = result + str.substring(0,3);
+			}
+		}
+
+		return result;
 	}
 
 	/*
@@ -341,7 +356,15 @@ public class Exercises {
 	 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		return 0;
+		int numberOfXs =0;
+		int strLength = str.length();
+		for (int i = 0; i < strLength -1; i++){
+			if (str.substring(i, i +2).equals("xx")){
+				numberOfXs = numberOfXs +1;
+			}
+		}
+
+		return numberOfXs;
 	}
 
 	/*

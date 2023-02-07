@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class WordSearch {
@@ -15,6 +16,9 @@ public class WordSearch {
 	public void run() {
 		/* Your code goes here */
 		//Shaylyn start here
+		System.out.println("Enter the Name of the file");
+		String filePath = userInput.nextLine();
+		File wordSearchFile = new File(filePath);
 
 
 	}
