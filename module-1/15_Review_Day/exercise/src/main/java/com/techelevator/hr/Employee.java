@@ -22,6 +22,10 @@ public class Employee extends Person implements Billable {
         this.salary = salary;
     }
 
+    public Employee() {
+
+    }
+
     @Override
     public String getFullName() {
         return this.getLastName() + ", " + this.getFirstName();
@@ -35,7 +39,19 @@ public class Employee extends Person implements Billable {
 
     @Override
     public double getBalanceDue(Map<String, Double> servicesRendered) {
-        return 0;
+        double balance = 0.0;
+        double totalBalance = 0.0;
+        double currentValue = 0.0;
+        var entryValue  = servicesRendered.entrySet();
+        for (var service : entryValue) {
+            if (service.getKey() == "Walking") {
+                currentValue = service.getValue() * .50;
+                totalBalance += currentValue;
+            } else {
+                totalBalance += currentValue;
+            }
+        }
+        return totalBalance;
     }
 
     // getters and setters

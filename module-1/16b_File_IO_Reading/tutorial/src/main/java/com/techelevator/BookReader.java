@@ -27,6 +27,28 @@ public class BookReader {
         /*
         Step 2: Step Two: Open the book file and handle errors
          */
+        File bookFile = new File(filePath);
+        int lineCount = 0;
+        boolean inBookText = false;
+        try (Scanner fileInput = new Scanner((bookFile))) {
+            while (fileInput.hasNextLine()){
+                String lineOfText = fileInput.nextLine();
+
+                if (lineOfText.startsWith(BEGIN_MARKER)) {
+                    inBookText = true;
+                    continue;
+                }
+                if (lineOfText.startsWith(END_MARKER)){
+                    break;
+                }
+                System.out.println(lineCount + ": " + lineOfText);
+            }
+        } catch (FileNotFoundException e){
+            System.out.println("The file was not found: " + bookFile.getAbsolutePath());
+        }
+        System.out.println("Found " + lineCount + " lines of text in " + filePath);
+
+
 
     }
 }
