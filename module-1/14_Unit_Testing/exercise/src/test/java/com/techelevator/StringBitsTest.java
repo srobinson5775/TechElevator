@@ -10,16 +10,34 @@ public class StringBitsTest {
     public void EveryOtherChar(){
         //Arrange
         StringBits stringBits = new StringBits();
+        String str ="Hello";
+
+        String expectedStr = "Hlo";
 
         //Act
-        String expectedResult ="Hlo";
-        String expectedResult2 = "H";
-        String expectedResult3 = "Hello";
+        String actualStr = stringBits.getBits(str);
 
         //Assert
-        Assert.assertEquals(expectedResult, "Hello");
-        Assert.assertEquals(expectedResult2,"Hi");
-        Assert.assertEquals(expectedResult3, "Heeloleo");
+        Assert.assertEquals(expectedStr,actualStr);
+
+    }
+
+    @Test
+
+    public void StringIsEmpty_OrNull(){
+        StringBits stringBits = new StringBits();
+        //Arrange
+        String str2 = null;
+
+        String expectedStr2 = "";
+        //Act
+
+        String actualStr2 = stringBits.getBits(str2);
+
+        //Assert
+
+        Assert.assertEquals(expectedStr2, actualStr2);
+
 
     }
 }

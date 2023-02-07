@@ -6,13 +6,13 @@ import java.lang.reflect.Array;
 
 public class SameFirstLastTest {
 
-    @Test
+//    @Test
 
-    public void ArrayIs_OneOrMore(){
-        //Arrange
-        Array[] arrays = new Array[];
-
-        //Act
-        Array[] expectation = arrays[]
-    }
+//    public void ArrayIs_OneOrMore(){
+//        //Arrange
+//        Array[] arrays = new Array[];
+//
+//        //Act
+//        Array[] expectation = arrays[]
+//    }
 }

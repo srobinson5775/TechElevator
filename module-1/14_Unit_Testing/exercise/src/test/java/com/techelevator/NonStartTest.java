@@ -7,19 +7,21 @@ public class NonStartTest {
 
     @Test
 
-    public void PartialConecatnation(){
+    public void PartialConcatnation(){
         //Arrange
         NonStart nonStart = new NonStart();
 
+        String a = "Hello";
+        String b = "There";
+        String expectedString = "ellohere";
+
         //Act
-        String expectedResult = "ellohere";
-        String expectedResult2 = "avacode";
-        String expectedResult3 = "hotlava";
+        String actutalString = nonStart.getPartialString(a, b);
+
 
         //Assert
-        Assert.assertEquals(expectedResult,nonStart.getPartialString("Hello", "There"));
-        Assert.assertEquals(expectedResult2, nonStart.getPartialString("Java", "Code"));
-        Assert.assertEquals(expectedResult3, nonStart.getPartialString("Shotl", "hotlava"));
+        Assert.assertEquals(expectedString, actutalString);
+
     }
     @Test
 
@@ -27,14 +29,14 @@ public class NonStartTest {
         //Arrange
         NonStart nonStart = new NonStart();
 
+        String a = null;
+        String b = null;
+        String expectedString = "";
         //Act
-        String expectedResult = "ellohere";
-        String expectedResult2 = "avacode";
-        String expectedResult3 = "hotlava";
+        String actualString= nonStart.getPartialString(a, b);
+
 
         //Assert
-        Assert.assertEquals(expectedResult, nonStart.getPartialString(null, null));
-        Assert.assertEquals(expectedResult2, nonStart.getPartialString(null, null));
-        Assert.assertEquals(expectedResult3, nonStart.getPartialString(null, null));
+        Assert.assertEquals(expectedString, actualString);
     }
 }

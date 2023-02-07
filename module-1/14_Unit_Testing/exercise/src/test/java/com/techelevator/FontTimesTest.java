@@ -9,27 +9,26 @@ public class FontTimesTest {
     public void MoreThanThree(){
         //Arrange
         FrontTimes frontTimes = new FrontTimes();
+        String str = "Chocolate";
+        int n = 3;
+        String expectedStr = "ChoChoCho";
 
         //Act
-        String expected = "Ton";
-        String expected2 = "TonTon";
-        String expected3 = "TonTonTon";
+        String actualStr = frontTimes.generateString(str,n);
 
         //Assert
-        Assert.assertEquals(expected, frontTimes.generateString("Tony", 3));
-        Assert.assertEquals(expected2, frontTimes.generateString("Ton", 2));
-        Assert.assertEquals(expected3, frontTimes.generateString("Tony", 1));
+        Assert.assertEquals(expectedStr, actualStr);
     }
     @Test
     public void LessThanThree(){
         FrontTimes frontTimes = new FrontTimes();
+        String str = "Chocolate";
+        int n = 2;
+        String expectedStr = "ChoCho";
 
-        String expected = "To";
-        String expected2 = "ToTo";
-        String expected3 = "ToToTo";
+        //Act
+        String actualStr = frontTimes.generateString(str, n);
 
-        Assert.assertEquals(expected, frontTimes.generateString("Jo", 3));
-        Assert.assertEquals(expected2, frontTimes.generateString("Jo", 2));
-        Assert.assertEquals(expected3, frontTimes.generateString("Jo", 1));
+        Assert.assertEquals(expectedStr, actualStr);
     }
 }

@@ -8,26 +8,40 @@ public class CigarPartyTest {
     @Test
     public void CigarsForBoolean_IsWeekend(){
         //Arrange
-        CigarParty party = new CigarParty();
+        CigarParty cigarParty = new CigarParty();
+
+        boolean expectedResult = true;
+        boolean expectedResult2 = true;
+        boolean expectedResult3 = false;
+        int minCigars = 40;
+        int maxCigars = 70;
+
 
         //Act
-        boolean expected = true;
-
+        boolean actualResult = cigarParty.haveParty(minCigars, true );
+        boolean actualResult2 = cigarParty.haveParty(maxCigars, true);
+        boolean actualResult3 = cigarParty.haveParty(30, false);
         //Assert
-        Assert.assertEquals(expected,party.haveParty(40, true));
-        Assert.assertEquals(expected, party.haveParty(70, true));
+        Assert.assertEquals(expectedResult, actualResult);
+        Assert.assertEquals(expectedResult2,actualResult2);
+        Assert.assertEquals(expectedResult3, actualResult3);
 
     }
     @Test public void CigarsForBoolean_IsNotWeekend(){
         //Assert
-        CigarParty party = new CigarParty();
+        CigarParty cigarParty = new CigarParty();
+        boolean expectedResult = true;
+        boolean expectedResult2 = false;
+        int minCigars = 40;
+        int maxCigars = 70;
 
         //Act
-        boolean expectedTResult = true;
-        boolean expectedFResult = false;
+        boolean actualResult = cigarParty.haveParty(minCigars, true);
+        boolean actualResult2 = cigarParty.haveParty(maxCigars, false);
+
 
         //Assert
-        Assert.assertEquals(expectedFResult, party.haveParty(40, false));
-        Assert.assertEquals(expectedFResult, party.haveParty(60, false));
+        Assert.assertEquals(expectedResult, actualResult);
+        Assert.assertEquals(expectedResult2, actualResult2);
     }
 }

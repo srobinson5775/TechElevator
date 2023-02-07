@@ -10,13 +10,16 @@ public class Less20Test {
         Less20 Less20 = new Less20();
 
         //Act
-        Boolean ExpectedTrue = true;
-        Boolean ExpectedFalse = false;
+        Boolean expectedTrue = true;
+        Boolean expectedFalse = false;
+        Boolean actualTrue = Less20.isLessThanMultipleOf20(19);
+        Boolean actualFalse = Less20.isLessThanMultipleOf20(41);
 
         //Assert
-        Assert.assertEquals(true, Less20.isLessThanMultipleOf20(19));
-        Assert.assertEquals(false, Less20.isLessThanMultipleOf20(41));
+        Assert.assertEquals(expectedTrue, actualTrue);
+        Assert.assertEquals(expectedFalse, actualFalse);
     }
+    @Test
     public void Two_LessThan20(){
         //Arrange
         Less20 Less20 = new Less20();
@@ -24,10 +27,12 @@ public class Less20Test {
         //Act
         Boolean expectedTrue = true;
         Boolean expectedFalse = false;
+        Boolean actualTrue = Less20.isLessThanMultipleOf20(18);
+        Boolean actualfalse = Less20.isLessThanMultipleOf20(42);
 
         //Assert
-        Assert.assertEquals(true, Less20.isLessThanMultipleOf20(18));
-        Assert.assertEquals(false, Less20.isLessThanMultipleOf20(42));
+        Assert.assertEquals(expectedTrue, actualTrue);
+        Assert.assertEquals(expectedFalse, actualfalse);
     }
 
 
