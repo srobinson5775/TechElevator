@@ -31,43 +31,39 @@ public class WordSearch {
 					continue;
 
 				}
-
-				//check to make sure that its not null or empty .is empty
+				break;
+			}
+			//check to make sure that its not null or empty .is empty
 			System.out.println("Enter search word");
 			String searchWord = userInput.nextLine();
-			if ((searchWord == null) || (searchWord.isEmpty())){
+			if ((searchWord == null) || (searchWord.isEmpty())) {
 				System.out.println("search word is empty");
-
+				System.exit(1);
 			}
 
 			System.out.println("Should the search be case sensitive? (Y/N");
 			boolean caseSensitive = userInput.nextLine().equals("Y");
 
 			int lineNumber = 1;
-
-			try (userInput) {
-				while (userInput.hasNextLine()) {
-					String line = userInput.nextLine();
-					if(!caseSensitive){
-						if(line.toLowerCase().contains(searchWord.toLowerCase())){
+			try (Scanner inputScanner = new Scanner(inputFile.getAbsoluteFile())) {
+				while (inputScanner.hasNextLine()) {
+					String line = inputScanner.nextLine();
+					if (!caseSensitive) {
+						if (line.toLowerCase().contains(searchWord.toLowerCase())) {
 							System.out.println(lineNumber + ")" + line);
 						}
-					}
-					else {
-						if(line.contains(searchWord)){
+					} else {
+						if (line.contains(searchWord)) {
 							System.out.println(lineNumber + ")" + line);
 						}
 					}
 					lineNumber += 1;
 
-					}
-				}break;
-
-
+				}
 			}
-
-
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
 		}
-
 	}
+
 }
