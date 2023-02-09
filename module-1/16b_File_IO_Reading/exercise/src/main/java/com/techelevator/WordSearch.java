@@ -19,19 +19,16 @@ public class WordSearch {
 		/* Your code goes here */
 		try (userInput) {
 			File inputFile;
-			while (true) {
+
 				System.out.println("Enter the file to be searched");
 				String path = userInput.nextLine();
 				inputFile = new File(path);
 				if (!inputFile.exists()) {
 					System.out.println(path + " does not exist");
-					continue;
-				} else if (!inputFile.isFile()) {
-					System.out.println(path + "is not a file");
-					continue;
-
 				}
-				break;
+				if (!inputFile.isFile()) {
+					System.out.println(path + "is not a file");
+
 			}
 			//check to make sure that its not null or empty .is empty
 			System.out.println("Enter search word");
@@ -49,11 +46,11 @@ public class WordSearch {
 					String line = inputScanner.nextLine();
 					if (!caseSensitive) {
 						if (line.toLowerCase().contains(searchWord.toLowerCase())) {
-							System.out.println(lineNumber + ")" + line);
+							System.out.println(lineNumber + ") " + line);
 						}
 					} else {
 						if (line.contains(searchWord)) {
-							System.out.println(lineNumber + ")" + line);
+							System.out.println(lineNumber + ") " + line);
 						}
 					}
 					lineNumber += 1;
