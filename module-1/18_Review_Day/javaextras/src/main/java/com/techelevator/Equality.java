@@ -32,9 +32,12 @@ public class Equality {
         } else {
             System.out.println("Object values are not equal");
         }
-    String text = "01|Yoda|ForcePower|10";
 
-String[] parts= text.split("\\|");
+
+        System.out.println();
+        System.out.println("Person 1:");
+        System.out.println(person1.toString());
+
 
     }
 

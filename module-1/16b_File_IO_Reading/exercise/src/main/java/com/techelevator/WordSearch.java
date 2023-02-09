@@ -38,11 +38,10 @@ public class WordSearch {
 			String searchWord = userInput.nextLine();
 			if ((searchWord == null) || (searchWord.isEmpty())) {
 				System.out.println("search word is empty");
-				System.exit(1);
 			}
 
 			System.out.println("Should the search be case sensitive? (Y/N");
-			boolean caseSensitive = userInput.nextLine().equals("Y");
+			boolean caseSensitive = userInput.nextLine().toLowerCase().equals("Y");
 
 			int lineNumber = 1;
 			try (Scanner inputScanner = new Scanner(inputFile.getAbsoluteFile())) {
@@ -58,7 +57,7 @@ public class WordSearch {
 						}
 					}
 					lineNumber += 1;
-
+					//src/main/java/alices_adventures_in_wonderland.txt
 				}
 			}
 		} catch (FileNotFoundException e) {

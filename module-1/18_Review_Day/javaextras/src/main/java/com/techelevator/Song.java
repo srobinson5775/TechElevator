@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Song {
     private String songName;
@@ -47,4 +48,24 @@ public class Song {
         this.releaseDate = releaseDate;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Song song = (Song) o;
+        return songName.equals(song.songName) && Artist.equals(song.Artist) && genre.equals(song.genre) && releaseDate.equals(song.releaseDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(songName, Artist, genre, releaseDate);
+    }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "songName='" + songName + '\'' +
+                ", Artist='" + Artist + '\'' +
+                '}';
+    }
 }

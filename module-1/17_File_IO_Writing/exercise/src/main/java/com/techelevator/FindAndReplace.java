@@ -19,52 +19,54 @@ public class FindAndReplace {
         /* Your code goes here */
         System.out.println("what is the search word?");
         String searchWord = userInput.nextLine();
-        if ((searchWord == null) || (searchWord.isEmpty())){
+        if ((searchWord == null) || (searchWord.isEmpty())) {
             System.out.println("The search word is empty");
-            System.exit(1);
+            System.exit(0);
         }
 
         System.out.println("What is the replacement word?");
         String replacementWord = userInput.nextLine();
-        if ((replacementWord == null) || (replacementWord.isEmpty())){
+        if ((replacementWord == null) || (replacementWord.isEmpty())) {
             System.out.println("The replacement word is empty");
-            System.exit(1);
+            System.exit(0);
         }
 
         File sourceFile;
         System.out.println("What is the source file");
-        String path = userInput.nextLine();
-        sourceFile = new File(path);
+        String sourcePath = userInput.nextLine();
+        sourceFile = new File(sourcePath);
         if (!sourceFile.exists()) {
-            System.out.println(path + " does not exist");
-            System.exit(1);
+            System.out.println(sourcePath + " does not exist");
+            System.exit(0);
         } else if (!sourceFile.isFile()) {
-            System.out.println(path + " is not a file");
-            System.exit(1);
+            System.out.println(sourcePath + " is not a file");
+            System.exit(0);
         }
 
-        File destinationFile;
-        System.out.println("What is the destination file?");
+        System.out.println("What is the destination file");
         String destinationPath = userInput.nextLine();
-        destinationFile = new File(destinationPath);
-        if(!destinationFile.exists()) {
-            System.out.println(destinationPath + " does not exist");
-            System.exit(1);
-        } else if (!destinationFile.isFile()){
-            System.out.println(destinationPath + " is not a file");
-            System.exit(1);
-        }
+        File destinationFile = new File(destinationPath);
+//        if (!sourceFile.exists()) {
+//            System.out.println(destinationPath + " does not exist");
+//            System.exit(0);
+//        } else if (!sourceFile.isFile()) {
+//            System.out.println(destinationPath + " is not a file");
+//            System.exit(0);
+//        }
+        // File inputFile= new File(sourceFile);
+        // File outputFile = new File(destinationFile);
+        try (
+                Scanner dataInput = new Scanner(sourceFile); //file to read from
+                PrintWriter dataOutput = new PrintWriter(destinationFile)) { //file to write from
+            while (dataInput.hasNextLine()) {
+                String lineOfInput = dataInput.nextLine();
 
-        try(Scanner sourceScanner = new Scanner(sourceFile.getAbsoluteFile())) {
-            PrintWriter destinationWriter = new PrintWriter(destinationFile.getAbsoluteFile());
-                while (sourceScanner.hasNextLine()){
-                    String line = sourceScanner.nextLine();
-                    destinationWriter.println(line.replaceAll(searchWord, replacementWord));
+                dataOutput.println(lineOfInput.replaceAll(searchWord, replacementWord));
             }
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
+
+
         }
-
-
     }
 }

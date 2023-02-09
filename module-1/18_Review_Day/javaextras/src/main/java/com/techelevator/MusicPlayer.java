@@ -24,7 +24,7 @@ public class MusicPlayer {
 
         //Alternative
         String genre2 = "Alternative";
-        Song alternativeSong1 = new Song("Bad Habbit", "Steve Lacy", genre2, LocalDate.parse("2022-10-31"));
+        Song alternativeSong1 = new Song("Bad Habit", "Steve Lacy", genre2, LocalDate.parse("2022-10-31"));
         Song alternativeSong2 = new Song("This Is Why", "Paramore", genre2, LocalDate.parse("2022-11-30"));
         Song alternativeSong3 = new Song("Burning", "Yeah Yeah Yeahs", genre2, LocalDate.parse("2022-12-31"));
 
@@ -42,7 +42,7 @@ public class MusicPlayer {
         if(musicCollection.containsKey("Alternative")){  //prefer to use genre2 variable
             List<Song> songList = musicCollection.get("Alternative");
             for(Song song : songList){
-                System.out.println(song);
+                System.out.println(song.toString());
             }
         }
 

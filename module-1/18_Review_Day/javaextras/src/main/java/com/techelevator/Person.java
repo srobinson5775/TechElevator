@@ -54,4 +54,27 @@ public class Person {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return firstName.equals(person.firstName) && lastName.equals(person.lastName) && birthDate.equals(person.birthDate) && ssn.equals(person.ssn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, birthDate, ssn);
+    }
+
+    //nice to have if directly sout object
+    @Override
+    public String toString() {
+        return
+                 firstName + '\'' +
+                lastName + '\'' +
+                 birthDate +
+                  ssn + '\'';
+
+    }
 }
