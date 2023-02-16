@@ -50,9 +50,15 @@
 
 -- MovieDB
 -- After creating the MovieDB database and running the setup script, make sure it is selected in pgAdmin and confirm it is working correctly by writing queries to retrieve...
-
+SELECT * FROM person;
 -- The names of all the movie genres
-
+SELECT genre_name
+FROM genre;
 
 -- The titles of all the Comedy movies
+SELECT m.title
+FROM movie AS m
+INNER JOIN movie_genre AS mg ON m.movie_id = mg.movie_id
+INNER JOIN genre AS g ON mg.genre_id = g.genre_id 
+WHERE g.genre_name = 'Comedy';
 
