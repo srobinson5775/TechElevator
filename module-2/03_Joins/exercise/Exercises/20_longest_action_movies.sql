@@ -2,3 +2,13 @@
 -- Order the movies by length (highest first), then by release date (latest first).
 -- (5 rows, expected lengths around 180 - 200)
 
+SELECT
+	m.title
+	,m.length_minutes
+	,m.release_date
+FROM movie m
+JOIN movie_genre mg ON m.movie_id = mg.movie_id
+JOIN genre g ON mg.genre_id = g.genre_id
+WHERE g.genre_name = 'Action'
+ORDER BY m.length_minutes DESC, m.release_date DESC
+LIMIT 5;

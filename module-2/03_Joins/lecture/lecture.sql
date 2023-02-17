@@ -1,21 +1,50 @@
 -- INNER JOIN
 
 -- Write a query to retrieve the name and state abbreviation for the 2 cities named "Columbus" in the database
+SELECT city_name, state_abbreviation
+FROM city
+WHERE city_name = 'Columbus';
 
 
 -- Modify the previous query to retrieve the names of the states (rather than their abbreviations).
+SELECT
+	city.city_name,
+	state.state_name
+FROM city
+INNER JOIN state ON city.state_abbreviation = state.state_abbreviation
+WHERE city.city_name = 'Columbus';
 
+--using table aliases
+SELECT
+	c.city_name,
+	s.state_name
+FROM city AS c
+INNER JOIN state AS s ON c.state_abbreviation =s.state_abbreviation
+WHERE c.city_name = 'Columbus';
 
 -- Write a query to retrieve the names of all the national parks with their state abbreviations.
 -- (Some parks will appear more than once in the results, because they cross state boundaries.)
-
-
+SELECT
+	p.park_name,
+	ps.state_abbreviation
+FROM park p
+JOIN park_state ps ON p.park_id = ps.park_id
 -- The park_state table is an associative table that can be used to connect the park and state tables.
 -- Modify the previous query to retrieve the names of the states rather than their abbreviations.
-
+--MANY TO MANY relationship
+SELECT
+	p.park_name,
+	ps.state_name
+FROM park p
+JOIN park_state ps ON p.park_id = ps.park_id
+JOIN state s ON ps.state_abbreviation = s.state_abbreviation;
 
 -- Modify the previous query to include the name of the state's capital city.
-
+SELECT
+	p.park_name
+	,ps.state_name
+	,s.captial
+	
 
 -- Modify the previous query to include the area of each park.
 
@@ -61,4 +90,5 @@ FROM movie AS m
 INNER JOIN movie_genre AS mg ON m.movie_id = mg.movie_id
 INNER JOIN genre AS g ON mg.genre_id = g.genre_id 
 WHERE g.genre_name = 'Comedy';
+
 
