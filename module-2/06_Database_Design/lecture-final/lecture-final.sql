@@ -1,6 +1,11 @@
 --DROP DATABASE IF EXISTS "ArtGallery";
 --CREATE DATABASE "ArtGallery";
 
+--DROP TABLE IF EXISTS customer_purchase;
+--DROP TABLE IF EXISTS art;
+--DROP TABLE IF EXISTS artist;
+--DROP TABLE IF EXISTS customer;
+
 BEGIN TRANSACTION;
 
 CREATE TABLE customer
