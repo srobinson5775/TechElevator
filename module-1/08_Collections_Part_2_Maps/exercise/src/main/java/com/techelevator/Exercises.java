@@ -245,8 +245,10 @@ public class Exercises {
      * 	 → {"SKU1": 100, "SKU2": 64, "SKU3": 44, "SKU4": 5}
      *
      */
-    public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse,
-                                                     Map<String, Integer> remoteWarehouse) {
+    public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
+        Set<String> keys = remoteWarehouse.keySet();
+        Map<String, Integer> mergedMap = new HashMap<>();
+        }
         return null;
     }
 

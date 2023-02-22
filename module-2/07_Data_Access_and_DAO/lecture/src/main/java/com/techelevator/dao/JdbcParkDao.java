@@ -18,17 +18,39 @@ public class JdbcParkDao implements ParkDao {
 
     @Override
     public Park getPark(int parkId) {
-        return new Park();
+        Park park = null;
+        String sql = "SELECT park_id, park_name, date_established, area, has_camping " +
+                "FROM park " +
+                "WHERE park_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, parkId);
+        if(results.next()){
+            park = mapRowToPark(results);
+        }
+        return park;
     }
 
     @Override
     public List<Park> getParksByState(String stateAbbreviation) {
-        return new ArrayList<Park>();
+        List<Park> parks = new ArrayList<>();
+        String sql = "SELECT park.park_id, park_name, date_established, area, has_camping " +
+                    "FROM park " +
+                    "JOIN park_state ON park.park_id = park_state.park_id " +
+                    "WHERE state_abbreviation = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, stateAbbreviation);
+        while (results.next()) {
+            parks.add(mapRowToPark(results));
+        }
+
+        return parks;
     }
 
     @Override
     public Park createPark(Park park) {
-        return new Park();
+        String sql = "INSERT INTO park (park_name, date_established, area, has_camping) " +
+                "VALUES(?, ?, ?, ?) RETURNING park_id;";
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
+                park.getParkName(), park.getDateEstablished(), park.getArea(), park.getHasCamping());
+        return getPark(newId);
     }
 
     @Override
@@ -38,7 +60,10 @@ public class JdbcParkDao implements ParkDao {
 
     @Override
     public void deletePark(int parkId) {
-
+        String sql = "DELETE FROM park_state WHERE park_id = ?;";
+        jdbcTemplate.update(sql,parkId);
+        sql = "DELETE FROM park WHERE park_id = ?;";
+        jdbcTemplate.update(sql,parkId);
     }
 
     @Override
@@ -52,6 +77,13 @@ public class JdbcParkDao implements ParkDao {
     }
 
     private Park mapRowToPark(SqlRowSet rowSet) {
-        return new Park();
+        Park park = new Park();
+        park.setParkId(rowSet.getInt("park_id"));
+        park.setParkName(rowSet.getString("park_name"));
+        park.setDateEstablished(rowSet.getDate("date_established").toLocalDate());
+        park.setArea(rowSet.getDouble("area"));
+        park.setHasCamping(rowSet.getBoolean("has_camping"));
+
+        return park;
     }
 }
