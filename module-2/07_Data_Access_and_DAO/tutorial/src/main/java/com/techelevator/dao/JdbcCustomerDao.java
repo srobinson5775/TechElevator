@@ -17,6 +17,11 @@ public class JdbcCustomerDao implements CustomerDao {
     }
 
     // Step Four: Add a new DAO method
+    @Override
+    public Customer getCustomer(int customerId) {
+        Customer customer = null;
+        String sql
+    }
 
 
 
