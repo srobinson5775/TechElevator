@@ -5,6 +5,16 @@ public class Book {
     private String author;
     private double price;
 
+    public Book(String title, String author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    public Book(){
+
+    }
+
     public String getTitle() {
         return title;
     }
@@ -22,6 +32,10 @@ public class Book {
     }
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String bookInfo() {
+        return "Title: " + title + ", Author: " + author + ",Price: $" + price;
     }
 
 }

@@ -8,12 +8,13 @@ import org.junit.Test;
 import java.util.List;
 
 public class JdbcStateDaoTests extends BaseDaoTests {
-
+//act
     private static final State STATE_A = new State("AA", "State A");
     private static final State STATE_B = new State("BB", "State B");
     private static final State STATE_C = new State("CC", "State C");
 
     private JdbcStateDao sut;
+    //sut = systemundertest and its just a variable that is used during testing
 
     @Before
     public void setup() {
@@ -22,6 +23,7 @@ public class JdbcStateDaoTests extends BaseDaoTests {
 
     @Test
     public void getState_returns_correct_state_for_abbreviation() {
+        //arrange and assert
         State state = sut.getState("AA");
         assertStatesMatch(STATE_A, state);
 
