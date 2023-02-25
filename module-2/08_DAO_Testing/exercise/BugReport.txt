@@ -1,40 +1,58 @@
 Bug 1
 -----
 Test that demonstrates problem:
+getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee
 
 Expected output:
+getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee(1)
+returns 2 when called.
 
 Actual output:
+getTimesheetsByEmployeeId_returns_list_of_all_timesheets_for_employee(1)
+returns 1 when called.
 
 How did you fix this bug?
+changed the if() condition to a while().
 
 
 Bug 2
 -----
 Test that demonstrates problem:
+update_timesheet_has_expected_values_when_retrieved
 
 Expected output:
+update_timesheet_has_expected_values_when_retrieved(1);
+should return false when called
 
 Actual output:
+update_timesheet_has_expected_values_when_retrieved(1);
+returns true when called
 
 How did you fix this bug?
-
+added "billable = ?" to the String sql
+added updatedTimeSheet.isBillable() to jdbctemplate.
 
 Bug 3
 -----
 Test that demonstrates problem:
+getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project
 
 Expected output:
+getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project(1)
+should return 3 when called
 
 Actual output:
+getTimesheetsByProjectId_returns_list_of_all_timesheets_for_project(1)
+should returns 2 when called
 
 How did you fix this bug?
-
+changed String sql from "WHERE employee_id" to "project_id"
 
 Bug 4
 -----
 Test that demonstrates problem:
-
+I accidentally fixed the bug before I logged it
+I dont remember which one it is.
 Expected output:
 
 Actual output:

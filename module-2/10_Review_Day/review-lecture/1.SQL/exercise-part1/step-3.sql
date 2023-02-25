@@ -2,11 +2,18 @@
 -----------------------------------------------
 
 -- select name and daily fee of all campgrounds (expected: 7 rows)
+SELECT name, daily_fee
+FROM campground;
 
 -- select name, open from month, open to month, and daily fee of the campgrounds where daily fee is less than $100 (expected: 5 rows)
+SELECT name, open_to_mm, open_from_mm, daily_fee
+FROM campground
+WHERE daily_fee < '100.00';
 
 -- select name and daily fee of the campgrounds where the campground is open all year long (expected: 4 rows)
-
+SELECT name, daily_fee
+FROM campground
+WHERE open_from_mm = 1 AND open_to_mm = 12;
 
 -- PARK TABLE
 -----------------------------------------------
@@ -26,8 +33,15 @@
 -- select all columns from site where utilities is true and order by max RV length with the largest coming first
 -- (expected: 26 rows, starting with 35-foot max_rv_length)
 
--- select total number of sites that have utilities hook up (expected: around 25)
+SELECT *
+FROM site
+WHERE utilities ='TRUE'
+ORDER BY max_rv_length DESC;
 
+-- select total number of sites that have utilities hook up (expected: around 25)
+SELECT DISTINCT COUNT(*) 
+FROM site
+WHERE utilities ='TRUE'
 
 -- RESERVATION TABLE
 -----------------------------------------------
