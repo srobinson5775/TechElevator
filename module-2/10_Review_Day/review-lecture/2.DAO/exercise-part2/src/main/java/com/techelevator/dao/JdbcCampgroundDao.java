@@ -8,7 +8,12 @@ import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcCampgroundDao {
+public class JdbcCampgroundDao implements CampgroundDao{
 
+    private JdbcTemplate jdbcTemplate;
+
+    public JdbcCampgroundDao(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
 }

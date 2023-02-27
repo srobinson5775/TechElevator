@@ -10,5 +10,10 @@ import java.util.List;
 
 public class JdbcSiteDao implements SiteDao {
 
+    private JdbcTemplate jdbcTemplate;
+
+    public JdbcSiteDao(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
 
 }

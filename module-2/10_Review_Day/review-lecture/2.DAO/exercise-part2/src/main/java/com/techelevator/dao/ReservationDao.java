@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ReservationDao {
 
+public int createReservation();
 
 
 }
