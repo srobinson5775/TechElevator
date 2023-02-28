@@ -1,5 +1,6 @@
 package com.techelevator.auctions.services;
 
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext;
 import com.techelevator.util.BasicLogger;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -18,17 +19,56 @@ public class AuctionService {
 
     public Auction add(Auction newAuction) {
         // place code here
-        return null;
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<Auction> entity = new HttpEntity<>(newAuction, headers);
+
+        Auction addedAuction = null;
+        try{
+            addedAuction = restTemplate.postForObject(API_BASE_URL, entity, Auction.class);
+        } catch (RestClientResponseException e){
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }
+        return addedAuction;
     }
 
     public boolean update(Auction updatedAuction) {
         // place code here
-        return false;
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity entity = new HttpEntity(updatedAuction, headers);
+
+        Boolean auctionIsUpdated = false;
+        try {
+            restTemplate.put(API_BASE_URL + updatedAuction.getId(), entity);
+            auctionIsUpdated = true;
+        }catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }
+
+        return auctionIsUpdated;
     }
 
     public boolean delete(int auctionId) {
         // place code here
-        return false;
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity entity = new HttpEntity<>(auctionId, headers);
+
+        Boolean auctionIsDeleted = false;
+        try {
+            restTemplate.delete(API_BASE_URL + auctionId, entity);
+            auctionIsDeleted = true;
+        } catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }
+        return auctionIsDeleted;
     }
 
     public Auction[] getAllAuctions() {

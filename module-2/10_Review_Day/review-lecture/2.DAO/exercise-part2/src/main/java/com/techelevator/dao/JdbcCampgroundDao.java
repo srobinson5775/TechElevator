@@ -27,7 +27,7 @@ public class JdbcCampgroundDao implements CampgroundDao{
         campground.setCampgroundId(rowSet.getInt("campground_id"));
         campground.setParkId(rowSet.getInt("parkId"));
         campground.setName(rowSet.getString("name"));
-        
+
     }
 
 }
