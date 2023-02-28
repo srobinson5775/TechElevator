@@ -10,19 +10,23 @@
   ------------------------------
 */
 SELECT * FROM park;
-INSERT INTO park (name, location, establish_date, area, visitors, descripton)
+INSERT INTO park (name, location, establish_date, area, visitors, description)
 VALUES('Ohiopyle State Park',
 	  'Pennsylvania',
 	  '1965-01-01',
 	  '19052',
 	  '1000000',
-	   'Ohiopyle State Park is a Pennsylvania state park on 19,052 acres in Dunbar, Henry Clay and Stewart Townships, Fayette County, Pennsylvania in the United States. The focal point of the park is the more than 14 miles of the Youghiogheny River Gorge that passes through the park.',
+	   'Ohiopyle State Park is a Pennsylvania state park on 19,052 acres in Dunbar, Henry Clay and Stewart Townships, Fayette County, 
+	   Pennsylvania in the United States. The focal point of the park is the more than 14 miles of the Youghiogheny River Gorge that passes through the park.');
 	  
 /*
   STEP TWO: You just found out that there was an error with the park data. Please update the park visitors to 1.5 million anually.
 
 */
-
+UPDATE park
+SET visitors = 15000000
+WHERE name ='Ohiopyle State Park';
+	   
 
 /*
  STEP THREE: Insert new campground with the following data:
@@ -34,7 +38,13 @@ VALUES('Ohiopyle State Park',
   daily_fee: 95.00
   ------------------------------------------------------------
 */
-
+INSERT INTO campground(park_id, name, open_from_mm, open_to_mm, daily_fee)
+VALUES(
+'7',
+'Youghiogheny',
+'01',
+'12',
+'95.00');
 
 /*
  STEP FOUR: Insert 3 new sites with the following data:

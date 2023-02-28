@@ -16,4 +16,19 @@ public class JdbcCampgroundDao implements CampgroundDao{
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    @Override
+    public List<Campground> getCampgroundsByParkId(int parkId){
+
+        return null;
+    }
+
+    private Campground mapRowToCampground(SqlRowSet rowSet) {
+        Campground campground = new Campground();
+        campground.setCampgroundId(rowSet.getInt("campground_id"));
+        campground.setParkId(rowSet.getInt("parkId"));
+        campground.setName(rowSet.getString("name"));
+        
+    }
+
 }
+

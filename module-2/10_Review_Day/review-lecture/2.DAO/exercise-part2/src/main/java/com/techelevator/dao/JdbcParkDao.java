@@ -16,6 +16,7 @@ public class JdbcParkDao implements ParkDao {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    //Hint: method to get sql data here
     @Override
     public List<Park> getAllParks() {
         List<Park> parkList = new ArrayList<>();
@@ -31,7 +32,7 @@ public class JdbcParkDao implements ParkDao {
     //Hint: you will need to follow a similar pattern -(lines 13 and 15) for your other DAO implementations.
 
 
-    //Hint: method to get sql data here
+
 
     //Hint: method to work with the sql row data in Java
     private Park mapRowToPark(SqlRowSet rowSet) {
