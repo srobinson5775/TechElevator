@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +102,35 @@ public class HotelController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/reservations", method = RequestMethod.POST)
-    public Reservation addReservation(@RequestBody Reservation reservation) {
+    public Reservation addReservation(@Valid @RequestBody Reservation reservation) {
         return reservationDao.create(reservation, reservation.getHotelId());
+    }
+
+    /**
+     * updates a reervation
+     *
+     * @param reservation
+     * @param id
+     * @return the update Reservation
+     */
+    @RequestMapping (path = "/reservations/{id}", method = RequestMethod.PUT)
+    public Reservation update(@Valid @RequestBody Reservation reservation, @PathVariable int id){
+        Reservation updatedReservation = reservationDao.update(reservation, id);
+        if (updatedReservation == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Reservation not found.");
+        } else {
+            return updatedReservation;
+        }
+    }
+
+    /**
+     * Delete a reservation by id
+     *
+     * @param id
+     */
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @RequestMapping(path = "/reservations/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable int id) {
+        reservationDao.delete(id);
     }
 }
