@@ -31,6 +31,7 @@ public class AuthenticationService {
             BasicLogger.log(e.getMessage());
         }
         return token;
+
     }
 
 }

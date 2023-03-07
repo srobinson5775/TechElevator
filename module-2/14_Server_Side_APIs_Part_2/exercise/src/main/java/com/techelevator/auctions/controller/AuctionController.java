@@ -66,6 +66,7 @@ public class AuctionController {
             return updatedAuction;
         }
     }
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @RequestMapping (path= "{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable int id) {

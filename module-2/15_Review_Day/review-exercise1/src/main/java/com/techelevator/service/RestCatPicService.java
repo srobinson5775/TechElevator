@@ -1,16 +1,21 @@
 package com.techelevator.service;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.techelevator.model.CatPic;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class RestCatPicService implements CatPicService {
 
-	@Override
+	private static final String API_URL = "https://cat-data.netlify.app/api/pictures/random";
+	private final RestTemplate restTemplate = new RestTemplate();
+
+
 	public CatPic getPic() {
-		// TODO Auto-generated method stub
-		return null;
+		CatPic catPic = restTemplate.getForObject(API_URL, CatPic.class);
+		return catPic;
 	}
 
 }	
