@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Bits & Bytes</h1> 
+        <p>Welcome to the internet's best restaurant</p>
+    </header>
+
+    <nav>
+        <a href="index.html">View menu</a>
+    </nav>
+
+    <main>
+        <h2>Reservation Form</h2>
+        <form method="POST" action="http://localhost:8080/api/resevations">
+            <div>
+                <label for="reservationId">Name:</label>
+                <input id="reservationId" name="reservationName" type="text" />                
+            </div>
+            <div>
+                
+                <label for="numberOfGuestsId">Number of guests:</label>
+                <input id="numberOfGuestsId" name="numberOfGuests" type="number" />
+            </div>
+            <div>
+               
+                <label for="reservationDateId">Date:</label>
+                <input id="reservationDateId" nmae="reservationDate" type="date" />
+            </div>
+            <div>
+                
+                <label for="reservationTimeId">Time:</label>
+                <input id="reservationTimeId" name="reservationTime" type="time" />
+            </div>
+            <div>
+                
+                <label for="specialOccasionId">Special occasion:</label>
+                <input id="specialOccasionId" name="specialOccasion" type="checkbox" />
+            </div>
+            <div>
+               
+                <input type="submit"/>
+            </div>
+
+            
+        
+        </form>
+    </main>
+    
+</body>
+</html>
