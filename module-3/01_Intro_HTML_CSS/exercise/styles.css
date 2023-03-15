@@ -1,0 +1,101 @@
+body{
+    background-color: rgb(168, 124, 11);
+}
+
+img{
+    height: 500px;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+header{
+    text-align: center;
+    font-size: x-large;
+    color:whitesmoke;
+}
+
+#facts-heading{
+    text-decoration: underline;
+    text-align: center;
+    color: whitesmoke;
+}
+
+table{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-color: white;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+
+td{
+    padding-top: 5px;
+    font-size: 20px;
+    text-align: left;
+    color: whitesmoke
+}
+
+th{
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}
+
+#quotes-heading{
+    text-decoration: underline;
+    text-align: center;
+    color:whitesmoke
+}
+
+#quotes-section{
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 20px;
+    border: 3px solid;
+    padding: 15px;
+    border-color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.336);
+    
+}
+
+blockquote{
+    color: white;
+    font-style: italic;
+}
+
+div{
+    padding: 50px;
+}
+
+#links-section > h2{
+    font-size: 25px;
+    text-decoration: underline;
+    text-align: center;
+    color: whitesmoke;
+}
+
+a{
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+li{
+    color: whitesmoke;
+}
+
+form{
+    background-color: rgba(0, 0, 0, 0.171);
+    font-weight: bold;
+    font-size: 20px;
+}
+form > div{
+    padding: 10px;
+}

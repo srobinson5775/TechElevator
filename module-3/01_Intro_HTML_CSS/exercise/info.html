@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <main>
+        <h2>Info Form</h2>
+        <form method="POST" action="http://localhost:8080/api/reservations">
+            <div>
+                <label for="name">Name:</label> 
+                <input id="name" required name="name" type="text"/>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input id="email" required name="email" type="email"/>
+            </div>
+            <div>
+                <label for="date-of-birth">Date of birth:</label>
+                <input id="date-of-birth" name="date-of-birth" type="date"/>
+            </div>
+            <div>
+                <label for="favorite-color">Favorite color:</label>
+                <input id="favorite-color" name="favorite-color" type="color"/>
+            </div>
+            <div>
+                <label for="lucky-number">Lucky number:</label>
+                <input id="lucky-number" name="lucky-number" type="number"/>
+            </div>
+            <div>
+                <label for="confirmation">Confirmation</label>
+                <input id="confirmation" name="confirmation" type="checkbox"/>
+            </div>
+            <div>
+                <input type="submit"/>
+            </div>
+        </form>
+    </main>
     
 </body>
 </html>
