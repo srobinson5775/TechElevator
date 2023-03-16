@@ -1,4 +1,56 @@
 
+header{
+    grid-area: header;
+}
+
+#menu-nav{
+    grid-area: menu-nav;
+}
+
+main{
+    grid-area: main;
+}
+
+/* Id or elment; Id is most specific */
+aside{
+    grid-area: upcoming-events;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+/*div.container or .container only defines the element  */
+.container{
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    /* grid-template-rows:  */
+    grid-template-areas: 
+        "header header header"
+        "menu-nav main upcoming-events"
+        "footer footer footer"
+    ;
+
+    gap: 10px;
+    height: 100vh;
+}
+
+
+
+/* will often see media queries listed last at the bottom on css */
+ @media screen and (max-width: 768px) {
+     .container{
+         grid-template-areas:
+         "header"
+         "menu-nav"
+         "main"
+         "upcoming-events"
+         "footer";
+         grid-template-columns: 1fr;
+     }
+ }
+    
 
 
 /***** enter grid CSS above this line *****/
@@ -124,4 +176,27 @@ div.food-item img {
 }
 div.food-item p {
     line-height: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar li{
+        display: inline-block;
+        padding: 10px;
+    }
+    .sidebar h3 {
+        color: orange;
+    }
+    aside#upcoming-events{
+        text-align: center;
+        font-size: 0.9em;
+    }
+    ul.sub-menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    div.food-item img{
+        max-width: 50%;
+    }
 }
