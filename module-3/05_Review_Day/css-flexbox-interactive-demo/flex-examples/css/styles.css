@@ -1,0 +1,94 @@
+#general-inputs {
+    margin-top: 50px;
+}
+
+
+#inputs {
+    margin-top: 20px;
+    display: flex;
+}
+
+.input-label {
+    display: block ;
+    font-weight: bolder;
+}
+
+#inputs  input {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 60px; 
+}
+
+.clear-btn, .group-btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 60px; 
+}
+
+#inputs button {
+    display: block;
+    /* margin: 0 auto; */
+}
+
+
+#blue-inputs > label {
+    color: blue;
+}
+
+#blue-inputs > input {
+    border-color: blue;
+}
+
+#red-inputs > label {
+    color: red;
+}
+
+#red-inputs > input {
+    border-color: red;
+}
+
+#green-inputs > label {
+    color: green;
+}
+
+#green-inputs > input {
+    border-color: green;
+}
+
+#purple-inputs > label {
+    color: purple;
+}
+
+#purple-inputs > input {
+    border-color: purple;
+}
+
+.desc-text {
+    font-size: 20px;
+
+}
+
+.desc-box {
+    margin-top: 20px;
+    background-color: palegoldenrod;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.hide {
+    display: none;
+}
+
+#example-nav {
+    margin-top: 50px;
+    border-top: 3px solid black;
+    padding-top: 20px;
+}
+
+#example-selection {
+    margin-bottom: 20px;
+}
+
+#wrap-input {
+    margin-top: 20px;
+}

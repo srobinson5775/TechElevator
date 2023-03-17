@@ -1,0 +1,62 @@
+
+#flex-container {
+    width: 100%;
+    height: 300px;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 2px solid black;
+
+}
+
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+
+
+.flex-item {
+    padding: 20px 0px; 
+    text-align: center;
+    color: white;
+
+    /* shorthand for flex-grow, flex-shrink, flex-basis */
+
+    /* these are the default values
+    flex-grow: 0; (don't grow - size based on contents)
+    flex-shrink: 1; (shrink value is 1 - can't go smaller that its true size 
+    flex-basis: auto;  (use my height and width)
+
+    
+    /* shorthand for flex-grow, flex-shrink, flex-basis */
+    flex: 0 0 auto /* we'll say don't allow grow or shrink and use true size */
+
+
+}
+
+
+#item-1 {
+    background-color: blue;
+}
+
+#item-2 {
+    background-color: red;
+}
+
+#item-3 {
+    background-color: green;
+
+}
+
+#item-4 {
+    background-color: purple;
+
+}

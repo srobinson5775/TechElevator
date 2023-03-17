@@ -1,0 +1,37 @@
+
+/*Selects all <p> elements that are direct children where parent is a <div> element*/
+div > p {
+    color: red;
+}
+
+/*Selects all <p> elements that are descendants of <div> element*/
+div p {
+    color: violet;
+}
+
+#div-1b{
+    color: green;
+}
+
+#div-1b-x{
+    color: orange;
+}
+
+
+div span {
+    color: blue;
+    display: block;
+}
+
+
+#div-1 span {
+    color:teal;
+    display: block;
+}
+
+a:hover {
+	background-color: rgb(208, 226, 43);
+}
+
+
+
