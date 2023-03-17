@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Examples</title>
+    <link rel="stylesheet" href="css/flex-styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/controls.js"></script>
+</head>
+
+<body>
+
+    <div id="example-selection">
+        <input type="radio" id="example-general" name="example-type" value="General" checked="selected" />
+        <label for="example-general">General</label>
+        <input type="radio" id="example-grow-shrink-basis" name="example-type" value="Grow/Shrink/Basis">
+        <label for="example-general">Grow/Shrink/Basis</label>
+    </div>
+    <div id="flex-container">
+        <div class="flex-item" id="item-1">Flex!</div>
+        <div class="flex-item" id="item-2">Flex!</div>
+        <div class="flex-item" id="item-3">Flex!</div>
+        <div class="flex-item" id="item-4">Flex!</div>
+    </div>
+    <div id="general-section">
+        <div id="general-inputs">
+            <label for="flex-dir">flex-direction</label>
+            <select id="flex-dir">
+                <option value="row" selected>row</option>
+                <option value="column">column</option>
+                <option value="row-reverse">row-reverse</option>                
+                <option value="column-reverse">column-reverse</option>
+            </select>
+            <label for="justify-val">justify-content</label>
+            <select id="justify-val">
+                <option value="flex-start" selected>flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+            </select>
+
+            <label for="align-val">align-items</label>
+            <select id="align-val">
+                <option value="flex-start" selected>flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="center">center</option>
+                <option value="stretch">stretch</option>
+            </select>
+        </div>
+    </div>
+    </div>
+    <div id="grow-shrink-basis-section" class="hide">
+        <div id="wrap-input">
+            <label for="wrap-val">Wrap: </label>
+            <select id="wrap-val">
+                <option value="nowrap">nowrap</option>
+                <option value="wrap">wrap</option>
+                <option value="wrap-reverse">wrap-reverse</option>
+            </select>
+        </div>
+        <div id="inputs">
+            <div id="blue-inputs">
+                <label for="blue-grow" class="input-label">Grow:</label>
+                <input id="blue-grow" value="0" type="number" />
+
+                <label for="blue-grow" class="input-label">Shrink:</label>
+                <input id="blue-shrink" value="0" type="number" />
+
+                <label for="blue-grow" class="input-label">Basis:</label>
+                <input id="blue-basis" value="auto" type="text" />
+            </div>
+            <div id="red-inputs">
+                <label for="red-grow" class="input-label">Grow:</label>
+                <input id="red-grow" value="0" type="text" />
+
+                <label for="red-grow" class="input-label">Shrink:</label>
+                <input id="red-shrink" value="0" type="text" />
+
+                <label for="red-grow" class="input-label">Basis:</label>
+                <input id="red-basis" value="auto" type="text" />
+            </div>
+            <div id="green-inputs">
+                <label for="green-grow" class="input-label">Grow:</label>
+                <input id="green-grow" value="0" type="text" />
+
+                <label for="green-grow" class="input-label">Shrink:</label>
+                <input id="green-shrink" value="0" type="text" />
+
+                <label for="green-grow" class="input-label">Basis:</label>
+                <input id="green-basis" value="auto" type="text" />
+            </div>
+            <div id="purple-inputs">
+                <label for="purple-grow" class="input-label">Grow:</label>
+                <input id="purple-grow" value="0" type="text" />
+
+                <label for="purple-grow" class="input-label">Shrink:</label>
+                <input id="purple-shrink" value="0" type="text" />
+
+                <label for="purple-grow" class="input-label">Basis:</label>
+                <input id="purple-basis" value="auto" type="text" />
+            </div>
+            <div id="clear-inputs">
+                <div class="clear-btn">
+                    <label for="clear-grows">Grow:</label>
+                    <button id="clear-grows">Clear</button>
+                </div>
+                <div class="clear-btn">
+                    <label for="clear-shrinks">Shrinks</label>
+                    <button id="clear-shrinks">Clear</button>
+                </div>
+                <div class="clear-btn">
+                    <label for="clear-basis">Basis</label>
+                    <button id="clear-basis">Clear</button>
+                </div>
+            </div>
+            <div id="clear-inputs">
+                <ul>
+                    <li>
+                        <div>flex-basis sets the initial main size of a flex item. auto means that the element will be
+                            automatically sized based on its content, or on any height or width value if they are
+                            defined.</div>
+                    </li>
+                    <li>
+                        <div>flex-grow sets the flex grow factor of a flex item's main size.</div>
+                    </li>
+                    <li>
+                        <div>flex-shrink sets the flex shrink factor of a flex item. If the size of all flex items is
+                            larger than the flex container, items shrink to fit according to flex-shrink.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="desc-container">
+            <div id="desc-text" class="desc-text desc-box">
+
+            </div>
+        </div>
+        <div id="example-nav">
+            <button id="next-example">Next Example</button>
+            <button id="previous-example">Previous Example</button>
+            <button id="current-example">Current Example</button>
+        </div>
+    </div>
+</body>
+
+</html>
