@@ -1,4 +1,56 @@
- 
+ body,
+ #hero footer,
+ #featured section,
+ #featured section article div,
+ #all-items section,
+ #all-items section article{
+   display: flex;
+  
+ }
+
+body,
+#all-items section{
+  flex-direction: column;
+}
+
+/* centering content horizontally */
+body{
+  align-items: center;
+
+}
+
+#featured section article div{
+  justify-content: center
+}
+
+#all-items section article{
+  justify-content: center;
+}
+
+
+/* centering content vertically */
+#hero footer{
+  align-items: center;
+}
+
+#all-items section article{
+  align-items: center;
+}
+
+
+/* applying layout */
+#hero footer{
+  justify-content: space-between;
+}
+
+#all-items article div:last-child{
+  flex-basis: 80%
+}
+
+#all-items article:nth-child(even) div:first-child{
+  order: 2;
+}
+
 
 
 /***** enter flexbox CSS above this line *****/
@@ -108,6 +160,14 @@ section {
     margin-top: -5px;
     height: 60px;
     font-size: 20px;
+  }
+
+  @media screen and (max-width: 1024px){
+    #featured section{
+      flex-wrap: wrap;
+    }
+  
+    #featured section article:nth-child(even)
   }
 
   #hero,

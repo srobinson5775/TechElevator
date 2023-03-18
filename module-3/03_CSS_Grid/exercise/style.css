@@ -50,3 +50,72 @@ header img {
 #student-picture img{
     border-radius: 50%;
 }
+
+h1#headline{
+    grid-area: headline;
+    
+}
+
+main > div#student-picture{
+    grid-area: picture;
+    text-align: center;
+}
+
+main > div#student-quote{
+    grid-area: quote;
+}
+
+main > div#student-contact{
+    grid-area: contact;
+    text-align: center;
+}
+
+main > div#student-profile{
+    grid-area: profile;
+}
+
+#experience-code{
+    
+    grid-area: code;
+   
+}
+
+#experience-database{ 
+    grid-area: database;
+}
+
+#experience-web{
+    grid-area: experience;
+}
+
+#experience-design{
+    grid-area: design;
+}
+
+main#main-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 50px;
+    grid-template-areas: 
+        "headline headline picture"
+        "quote quote picture"
+        "profile profile contact"
+        "experience experience experience";
+    align-items: center;
+
+}
+
+
+
+#experience-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
+    column-gap:50px;
+    grid-template-areas: 
+        "code code"
+        "database database"
+        "web design";
+    grid-area: experience;
+}
