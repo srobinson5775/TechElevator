@@ -6,6 +6,14 @@ body {
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+header > nav {
+  display: flex;
+  flex-grow: 0;
+
 }
 
 .logo {
@@ -16,6 +24,9 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 li {
@@ -40,4 +51,11 @@ a:hover {
 
 .my-account img {
   width: 40px;
+  
 }
+
+div.spacer{
+  display: flex;
+  flex-grow: 1;
+}
+

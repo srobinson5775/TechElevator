@@ -101,7 +101,8 @@ main#main-grid{
         "headline headline picture"
         "quote quote picture"
         "profile profile contact"
-        "experience experience experience";
+        "experience experience experience"
+        ;
     align-items: center;
 
 }
@@ -110,7 +111,7 @@ main#main-grid{
 
 #experience-grid{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     row-gap: 20px;
     column-gap:50px;
     grid-template-areas: 
