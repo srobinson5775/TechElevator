@@ -10,8 +10,25 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const daysPerWeek = 7; //const DAYS_PER_WEEK = 7; //following uppercase snake case convention
+  console.log(`There are ${daysPerWeek} days in the week.`)
   // Declares a variable those value can be changed
+  let daysPerMonth = 30;
+  console.log(`There are ${daysPerMonth} days in the month.`)
   // Declares a variable that will always be an array
+  const weekdays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
+  //will add to the end of array
+  weekdays.push("Sunday");
+  
+  console.table(weekdays);
 }
 
 /**
@@ -70,14 +87,23 @@ function objects() {
       "Milton Waddams",
       "Samir Nagheenanajar",
       "Michael Bolton"
-    ]
+    ],
+    toString: function(){
+      return `${this.lastName}, ${this.firstName} (${this.age})`;
+    }
   };
 
   // Log the object
+  console.log(person);
 
   // Log the first and last name
-
+  console.log(`${person.firstName} ${person.lastName}`);
   // Log each employee
+  for(let i = 0; i < person.employees.length; i++) {
+    console.log(`Employee ${i + 1} is ${person.employees[i]}`)
+  }
+
+  console.log(person.toString());
 }
 
 /*
@@ -139,3 +165,17 @@ function stringFunctions(value) {
         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
     */
 }
+
+function fizzBuzz(value){
+  let result = value;
+
+  if( value % 3 == 0 && value % 5 == 0){
+    result = "FizzBuzz";
+  }else if (value % 5 ==0) {
+    result = "Buzz";
+  }else if (value % 3 == 0){
+    result = "Fizz";
+  }
+    return result;
+  }
+  

@@ -19,6 +19,17 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
+function isAdmitted(gpa, satScore, recommendation){
+    if(gpa > 4.0 || satScore >1300){
+        return true;
+    } else if(gpa > 3.0 && recommendation){
+        return true;
+    } else if (satScore > 1200 && recommendation){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 /**
  * Write a function called useParameterToFilterArray that accepts a filter function
@@ -55,6 +66,16 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+/**
+ * 
+ * @param {string[]} words and array of words to add happy to the beginning 
+ * @returns {string[]} the words with Happy prepended
+ */
+function makeHappy(words){
+    return words.map((word) =>{
+        return 'Happy ' + word;
+    })
+}
 
 /*
  * Write and document a function called getFullAddressesOfProperties

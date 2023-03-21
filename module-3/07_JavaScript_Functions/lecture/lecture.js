@@ -28,6 +28,10 @@ function printToConsole(value) {
  * @param {number} secondParameter the second parameter to multiply
  */
 
+function multiplyTogether(firstParameter, secondParameter){
+  return firstParameter * secondParameter;
+}
+
 /**
  * This version makes sure that no parameters are ever missing. If
  * someone calls this function without parameters, we default the
@@ -38,7 +42,9 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
-
+function multiplyNoUndefined(firstParameter = 0, secondParameter = 0){
+  return firstParameter * secondParameter;
+}
 
  
 /**
@@ -87,6 +93,19 @@ function scopeTest() {
   }
 }
 
+/**
+ * JSDoc Example
+ * 
+ * Take the details of a person and create a new sentence that uses the
+ * information to describe them.
+ * We join the quirks array using the separator, or ',' by default.
+ * @param {String} name the name of the person we're describing
+ * @param {number} age the age of the person
+ * @param {string[]} [listOfQuirks] a list of funny quirks that will be listed
+ * @param {string} [separator=','] the string used to separate the quirks
+ * @returns {string} the full descriptive string
+ */
+
 function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') {
   let description = `${name} is currently ${age} years old. Their quirks are: `;
   return description + listOfQuirks.join(separator);
@@ -100,7 +119,12 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce(
+    (sum, number) => {
+      return sum + number;
+    }
+
+  );
 }
 
 /**
@@ -111,4 +135,25 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+  return numbersToFilter.filter((number) => {
+    return number % 3 === 0;
+  });
+}
+
+//More Array Functions
+//ForEach
+let numbers = [1, 2, 3, 4];
+
+numbers.forEach( (number) => {
+  console.log(`The number is ${number}`);
+});
+
+//map() function
+//let baseNumbers = [1, 2, 3, 4];
+
+function squareNumbers(baseNumbers){
+return squareNumbers = baseNumbers.map((number) => {
+  return number * 2;
+});
+}
