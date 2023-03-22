@@ -116,6 +116,11 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
 }
 
 
+//Array Functions
+
+//==========================================
+//            USING ANONYMOUS FUNCTIONS
+//==========================================
 
 /**
  * Takes an array and, using the power of anonymous functions, generates
@@ -124,7 +129,7 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @param {number[]} numbersToSum numbers to add up
  * @returns {number} sum of all the numbers
  */
-function sumAllNumbers(numbersToSum) {
+ function sumAllNumbers(numbersToSum) {
   return numbersToSum.reduce(
     (sum, number) => {
       return sum + number;
@@ -146,6 +151,46 @@ function allDivisibleByThree(numbersToFilter) {
     return number % 3 === 0;
   });
 }
+
+//==========================================
+
+//==========================================
+//  CAN ALSO USE NON-ANONYMOUS, NAMED FUNCTIONS
+//==========================================
+
+
+/**
+ * Takes an array and generates their sum. Uses non-anonymous function.
+ *
+ * @param {number[]} numbersToSum numbers to add up
+ * @returns {number} sum of all the numbers
+ */
+ function sumAllNumbersNonAnon(numbersToSum) {
+  return numbersToSum.reduce(addNumbers);
+}
+
+function addNumbers(sum, number) {
+  return sum + number;
+}
+
+
+/**
+ * Takes an array and returns a new array of only numbers that are
+ * multiples of 3, and uses a non-anonymous function.
+ *
+ * @param {number[]} numbersToFilter numbers to filter through
+ * @returns {number[]} a new array with only those numbers that are
+ *   multiples of 3
+ */
+ function allDivisibleByThreeNonAnon(numbersToFilter) {
+  return numbersToFilter.filter(isDivisibleByThree);
+}
+
+function isDivisibleByThree(number) {
+  return number % 3 === 0;
+}
+
+//==========================================
 
 
 //More Array Functions
@@ -171,4 +216,8 @@ function squareNumbersShortHand(baseNumbers){
   return baseNumbers.map(num =>(num ** 2));
 }
 
+
+//find()
+const array1 = [4, 8, 16, 64, 256];
+const found = array1.find(element => element > 14);
 
