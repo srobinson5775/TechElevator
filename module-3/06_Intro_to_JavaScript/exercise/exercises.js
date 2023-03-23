@@ -198,13 +198,17 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
-function filterMultiplesOfX(array){
-	let multiplesOfX = array.filter((number) =>{
-		return number % number == 0;
-	});
-	return multiplesOfX
-}
+function filterMultiplesOfX(array, multipleX){
+	let newArray = [];
+	for (let i = 0; i < array.length; i++){
+		if(array[i] % multipleX == 0){
+			newArray.push(array[i]);
+		}
+	}
+	return newArray;
 
+
+}
 /*
 12. **createObject** Write a function that creates an object with a property called 
 firstName, lastName, and age. Populate the properties with your values.
@@ -218,10 +222,10 @@ firstName, lastName, and age. Populate the properties with your values.
 	}
 */
 function createObj(){
-	const object = {
+	let obj = {
 		firstName: "Shaylyn",
 		lastName: "Robinson",
 		age: 25
 	};
-	return object;
+	return obj;
 }

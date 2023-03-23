@@ -38,7 +38,11 @@ function isAdmitted(gpa, satScore, recommendation){
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
  */
-let unfilteredArray = [1, 2, 3, 4, 5, 6];
+function useParameterToFilterArray(filterFunction){
+    let unfilteredArray = [1, 2, 3, 4, 5, 6];
+    return unfilteredArray.filter(filterFunction)
+}
+
 
 /**
  * Write a function called makeNumber that takes two strings
@@ -52,6 +56,9 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
+function makeNumber(first, second){
+   return parseInt(first.concat(second));
+}
 
 /**
  * Write a function called addAll that takes an unknown number of parameters
@@ -60,6 +67,14 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+
+function addAll() {
+    let result = 0;
+    for(let i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result;
+}
 
 /*
  * Write and document a function called makeHappy that takes
@@ -98,6 +113,8 @@ function makeHappy(words){
  * Use `map` and an anonymous function.
  */
 
+
+
 /** 
  * Write and document a function called findLargest that uses `forEach`
  * to find the largest element in an array.
@@ -112,6 +129,14 @@ function makeHappy(words){
  * @param {number[]|string[]} searchArray the array to search
  * @returns {number|string} the number or string that is largest
  **/
+function findLargest(array){
+    let input = array[0];
+    array.forEach(element => {
+        if (input < element) {
+            input = element;
+        }
+    }); return input;
+}
 
 
 /*
