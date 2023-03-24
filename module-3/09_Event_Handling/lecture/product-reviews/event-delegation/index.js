@@ -1,12 +1,19 @@
-const items = document.querySelectorAll("li");
-items.forEach(item => {
-  item.addEventListener("click", event => {
-    console.log(item.innerText);
-    event.target.style.backgroundColor = event.target.innerText;
-  });
-});
+// const items = document.querySelectorAll("li");
+// items.forEach(item => {
+//   item.addEventListener("click", event => {
+//     console.log(item.innerText);
+//     event.target.style.backgroundColor = event.target.innerText;
+//   });
+// });
+//uncomment to undo event delegation example
 
-
+/*Using event delegation - use common parent UL element.*/
+const colors = document.getElementById("colors");
+colors.addEventListener("click", event => {
+	if(event.target.nodeName.toLowerCase() === "li"){
+		event.target.tyle.backgroundColor = event.target.innerText;
+	}
+})
 function addOrange() {
 	const orange = document.createElement('li');
 	orange.innerText = 'Orange';

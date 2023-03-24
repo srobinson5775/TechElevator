@@ -112,6 +112,11 @@ function makeHappy(words){
  *
  * Use `map` and an anonymous function.
  */
+function getFullAddressesOfProperties(properties){
+    let address = properties.map((mailing) => {
+        return `${mailing.streetName} ${mailing.street}`
+    })
+}
 
 
 

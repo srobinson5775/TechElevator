@@ -58,13 +58,45 @@ function displayReview(review) {
 }
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
-
+document.addEventListener('DOMContentLoaded', () => {
 // Set the product reviews page title.
 setPageTitle();
 // Set the product reviews page description.
 setPageDescription();
 // Display all of the product reviews on our page.
 displayReviews();
+
+const desc = document.querySelector('.description');
+desc.addEventListener('click', (event)=> {
+  toggleDescriptionEdit(event.target);
+});
+
+const inputDesc = document.getElementById('inputDesc');
+inputDesc.addEventListener('keyup', (event) => {
+if (event.key ==='Enter') {
+  exitDescriptionEdit(event.target, true);
+}
+if (event.key === 'Escape') {
+  exitDescriptionEdit(event.target, false)
+}
+});
+
+inputDesc.addEventListener('mouseleave', (event) => {
+  exitDescriptionEdit(event.target, false);
+});
+
+const btnToggleForm = document.getElementById('btnToggleForm');
+btnToggleForm.addEventListener('click', () => {
+  showHideForm()
+});
+
+const btnSaveReview = document.getElementById('btnSaveReview');
+btnSaveReview.addEventListener('click', (event) => {
+event.preventDefault();
+  saveReview();
+});
+
+});
 
 /**
  * Hide the description and show the text box.
@@ -129,4 +161,20 @@ function resetFormValues() {
 /**
  * Save the review that was added using the add review form.
  */
-function saveReview() {}
+function saveReview() {
+  const name = document.getElementById('name');
+  const title = document.getElementById('title');
+  const review = document.getElementById('review');
+  const rating = document.getElementById('rating');
+
+  const newReview = {
+    reviewer: name.value,
+    title: title.value,
+    review: review.value,
+    rating: rating.value
+  };
+
+  reviews.push(newReview);
+  displayReview(newReview)//so page doesnt refresh
+  showHideForm();//so input clears after submitted
+}
