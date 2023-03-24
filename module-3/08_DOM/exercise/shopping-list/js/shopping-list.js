@@ -15,11 +15,11 @@ function setPageTitle() {
  * This function will loop over the array of groceries that was set above and add them to the DOM.
  */
 function displayGroceries() {
- const ul = document.getElementById('groceries');
-  groceries.forEach((item) => {
+  const ul = document.getElementById('groceries');
+  groceries.forEach((item) =>{
     const li = document.createElement('li');
     li.innerText = item;
-    ul.appendChild('li');
+    ul.appendChild(li)
   });
 }
 
