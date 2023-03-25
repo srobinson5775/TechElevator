@@ -17,15 +17,18 @@ const groceries = [
  * This function will get a reference to the title and set its text to the value
  * of the pageTitle variable that was set above.
  */
-function setPageTitle() {
+
+ function setPageTitle() {
   const title = document.getElementById('title');
   title.innerText = pageTitle;
 }
-
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+})
 /**
  * This function will loop over the array of groceries that was set above and add them to the DOM.
  */
-function displayGroceries() {
+ function displayGroceries() {
   const ul = document.querySelector('ul');
   groceries.forEach((item) => {
     const li = document.createElement('li');
@@ -34,32 +37,29 @@ function displayGroceries() {
     checkCircle.setAttribute('class', 'far fa-check-circle');
     li.appendChild(checkCircle);
     ul.appendChild(li);
+    li.addEventListener('click', () => {
+      item.completed = !item.completed;
+      if (item.completed) {
+        li.classList.add('completed');
+      } else {
+        li.classList.remove('completed');
+      }
+    });
+    li.addEventListener('dblclick', () => {
+      item.completed = false;
+      li.classList.remove('completed');
+    });
   });
 }
-
-li.addEventListener('click', () => {
-  item.completed = !item.completed;
-  if (item.completed) {
-    li.classList.add('completed');
-  } else {
-    li.classList.remove('completed');
-  }
-});
-li.addEventListener('dblclick', () => {
-  item.completed = false;
-  li.classList.remove('completed');
-});
-
-
 function markAllComplete() {
-const listItems = document.querySelectorAll('.toggleAll');
-listItems.forEach((li, index) => {
-groceries[index].completed = true;
-li.classList.add('completed');
-});
+  const listItems = document.querySelectorAll('.toggleAll');
+  listItems.forEach((li, index) => {
+    groceries[index].completed = true;
+    li.classList.add('completed');
+  });
 }
 document.addEventListener('DOMContentLoaded', () => {
-setPageTitle();
-displayGroceries();
-document.getElementById('toggleAll').addEventListener('click', markAllComplete);
+  setPageTitle();
+  displayGroceries();
+  document.getElementById('toggleAll').addEventListener('click', markAllComplete);
 });
