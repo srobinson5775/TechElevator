@@ -72,29 +72,40 @@ function clear() {
 }
 
 // add event listener for when the DOM is loaded
-document.addEventListener('LOADED_EVENT_GOES_HERE', () => {
-
+document.addEventListener('DOMContentLoaded', () => {
   // set the variable called display declared at the top of this file equal to the display element
   // HINT: use its id #display to get a reference to it
-
+    display = document.getElementById('display');
   // get a reference to all of the numbers
+  let numbers = document.querySelectorAll('button.number');
   // loop over each of the numbers
-  // add a click event listener to each number to call the function clickNumber
-
+    numbers.forEach(value => {
+// add a click event listener to each number to call the function clickNumber
+      value.addEventListener('click', clickNumber);
+    });
   // get a reference to the decimal point button
+     let decimal = document.querySelector('button.decimal');
   // add a click event listener to call the function clickNumber
-  // the decimal point is part of the number so you can call clickNumber for it 
+  // the decimal point is part of the number so you can call clickNumber for it
   // as you would for a number
-
+    decimal.addEventListener('click', clickNumber);
   // get a reference to the all clear button
-  // add a click event listener to call the function clear  
-
+    let clearButton = document.querySelector('button.all-clear');
+  // add a click event listener to call the function clear
+      clearButton.addEventListener('click', clear);
   // get a reference to all of the operators;
+  let operators = document.querySelectorAll('button.operator')
   // loop over each of the operators
   // add a click event listener to each operator to call the function clickOperator
-
+    operators.forEach(value => {
+      value.addEventListener('click', clickOperator);
+    });
   // add click event listener for the equal sign
+  let equal = document.querySelector('button.equal-sign');
   // should call the function performOperation
-
+  equal.addEventListener('click', performOperation);
 });
+
+
+
 

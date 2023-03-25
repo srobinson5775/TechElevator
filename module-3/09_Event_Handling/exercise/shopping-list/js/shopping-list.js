@@ -37,30 +37,29 @@ function displayGroceries() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  setPageTitle();
-  displayGroceries();
-
-const items = document.querySelectorAll('li');
-items.forEach((item) => {
-  item.addEventListener('click', (event) => {
-    completed(event.target);
-  });
-
-
+li.addEventListener('click', () => {
+  item.completed = !item.completed;
+  if (item.completed) {
+    li.classList.add('completed');
+  } else {
+    li.classList.remove('completed');
+  }
+});
+li.addEventListener('dblclick', () => {
+  item.completed = false;
+  li.classList.remove('completed');
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
+function markAllComplete() {
+const listItems = document.querySelectorAll('.toggleAll');
+listItems.forEach((li, index) => {
+groceries[index].completed = true;
+li.classList.add('completed');
+});
 }
-
+document.addEventListener('DOMContentLoaded', () => {
+setPageTitle();
+displayGroceries();
+document.getElementById('toggleAll').addEventListener('click', markAllComplete);
+});
