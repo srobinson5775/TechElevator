@@ -38,6 +38,40 @@ function addTodos() {
   todoList.appendChild(ul);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
 init();
 addPageTitle();
 addTodos();
+
+const tasks = document.querySelectorAll('li');
+tasks.forEach((task) => {
+  task.addEventListener('click', () => {
+    if (!task.classList.contains('completed')) {
+      task.classList.add('completed');
+
+      task.querySelector('i').classList.add('completed');
+    }
+  })
+})
+
+tasks.forEach((task) => {
+  task.addEventListener('dblclick', () => {
+    if(task.classList.contains('completed')) {
+      task.classList.remove('completed');
+
+      task.querySelector('i').classList.remove('completed');
+    }
+  })
+})
+
+const completeAll =
+document.getElementById('btnCompleteAll');
+completeAll.addEventListener('click', () => {
+  tasks.forEach((task => {
+    task.classList.add('completed');
+
+    task.querySelector('i').classList.add('completed');
+  }))
+})
+
+});
