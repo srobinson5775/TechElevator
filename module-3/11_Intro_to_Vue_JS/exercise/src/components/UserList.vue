@@ -24,7 +24,7 @@
         </td>
       </tr>
       <!-- user listing goes here -->
-      <tr class="user" v-for="user in users" v-bind:key="user.index" :class="{disabled: user.status === 'Disabled'}">
+      <tr class="user" v-for="(user, index) in filteredList" v-bind:key="index" :class="{inactive: user.status === 'Inactive'}">
         <td class="firstName">{{ user.firstName }}</td>
         <td class="lastName">{{ user.lastName }}</td>
         <td class="username">{{ user.username }}</td>
@@ -40,14 +40,7 @@ export default {
   name: 'user-list',
   data() {
     return {
-      filter:{
-        firstName: "",
-        lastName: "",
-        username: "",
-        emailAddress: "",
-        status: ""
-      },
-
+      
       search:{
         firstName: "",
         lastName: "",
@@ -70,10 +63,38 @@ export default {
   computed:{
     filteredList() {
       let filteredUser = this.users;
-      if (this.users.firstName != ""){
-        filteredUser = filteredUser.filter((user) =>{
-          user.firstName.toLowerCase().includes(this.user.firstName.toLowerCase())
-        });
+      if(this.search.firstName !="") {
+        filteredUser = filteredUser.filter((user) =>
+          user.firstName
+          .toLowerCase()
+          .includes(this.search.firstName.toLowerCase())
+        );
+      }
+      if (this.search.lastName != "") {
+        filteredUser = filteredUser.filter((user) =>
+          user.lastName
+            .toLowerCase()
+            .includes(this.search.lastName.toLowerCase())
+        );
+      }
+      if (this.search.username != "") {
+        filteredUser = filteredUser.filter((user) =>
+          user.username
+            .toLowerCase()
+            .includes(this.search.username.toLowerCase())
+        );
+      }
+      if (this.search.emailAddress != "") {
+        filteredUser = filteredUser.filter((user) =>
+          user.emailAddress
+            .toLowerCase()
+            .includes(this.search.emailAddress.toLowerCase())
+        );
+      }
+      if (this.search.status != "") {
+        filteredUser = filteredUser.filter((user) =>
+          user.status === this.search.status
+        );
       }
       
       return filteredUser
