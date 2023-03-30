@@ -3,6 +3,11 @@ let problemSet = [];
 let currentProblem = 1;
 let score = 0;
 
+/**
+ * Generates a problem set with {PROBLEMS_PER_SET} problems
+ * 
+ */
+
 function generateProblemSet() {
     for(i = 0; i < PROBLEM_PER_SET; ++i) {
         const problem = {
@@ -18,17 +23,30 @@ function generateProblemSet() {
     }
 }
 
+/**
+ * Handles display the current problem set
+ * The expression & answers are both empty by default
+ */
+
 function displayProblem() {
     displayProblem();
     displayAnswers();
 }
 
+/**
+ * Sets the current problem (problemStatement) based on the currentProblem
+ * 
+ */
+
 function displayProblem(){
     const problemContainer = document.getElementById('problem');
-    const problemStatement = `${problemSet[currentProblem-1],}`
+    const problemStatement = `${problemSet[currentProblem-1].problem.left} * ${problemSet[currentProblem-1].problem.right}`;
     problemContainer.querySelector('div.expression').innerText = problemStatement;
 }
 
+/**
+ * Displays the 4 possible answers for the current problem
+ */
 function displayAnswers(){
     const answerContainer = document.getElementById('answers');
     const list = answerContainer.querySelector('ul');
