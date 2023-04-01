@@ -11,7 +11,8 @@
       <star-summary rating="5"/>
     </div>
     <add-review />
-    <review-list />
+    <!--<review-list /> -->
+    <review-table/>
   </div>
 </template>
 
@@ -19,15 +20,16 @@
 import AverageSummary from "./components/AverageSummary.vue";
 import StarSummary from "./components/StarSummary.vue";
 import AddReview from "./components/AddReview.vue";
-import ReviewList from "./components/ReviewList.vue";
-
+//import ReviewList from "./components/ReviewList.vue";
+import ReviewTable from "./components/ReviewTable.vue";
 export default {
   name: "app",
   components: {
     AverageSummary,
     StarSummary,
     AddReview,
-    ReviewList
+    //ReviewList
+    ReviewTable
   }
 };
 </script>
