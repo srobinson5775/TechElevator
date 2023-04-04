@@ -38,13 +38,13 @@
           </td>
           <td>&nbsp;</td>
         </tr>
+        
         <tr
-          v-for="user in filteredList"
+          v-for="user in users"
           v-bind:key="user.id"
-          v-bind:class="{ deactivated: user.status === 'Inactive' }"
-        >
+          v-bind:class="{ deactivated: user.status === 'Inactive' }">
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" />
+            <input type="checkbox" v-bind="selectedUserIds" v-bind:id="user.id" v-bind:value="user.id" />
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -52,7 +52,7 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.status }}</td>
           <td>
-            <button v-on:click="changeStatus(userIndex)" class="btnActivateDeactivate"> {{user.status === 'Active' ? 'Inactive' : 'Active'}} </button>
+            <button v-on:click="toggleStatus(user.id)" class="btnActivateDeactivate"> {{user.status === 'Active' ? 'Deactivate' : 'Activate'}} </button> 
           </td>
         </tr>
       </tbody>
@@ -109,6 +109,7 @@ export default {
         emailAddress: "",
         status: "Active"
       },
+      
       showForm: false,
       selectedUserIds: [],
       users: [
@@ -179,15 +180,17 @@ export default {
     changeStatus(id){
       let userIndex = this.users.findIndex((user)=> user.id === id)
       let status = this.users[userIndex].status 
-       if(status === 'Active'){
-         status = 'Inactive' 
-       } else if(status === 'Inactive'){
-         status = 'Active'
-       }
-     }
+      status === 'Active' ? 'Inactive' : 'Active';
 
-  
+     //finish this method with what myron gave you in slack
   },
+    toggleStatus(id){
+      let user = this.users.find(user => user.id === id);
+      user.status = user.status === 'Active' ? 'Inactive' : 'Active';
+    },
+    activateUser(){
+      this.selectedUserIds = 
+    }
 
   
   computed: {
@@ -229,7 +232,8 @@ export default {
       return filteredUsers;
     }
   }
-};
+}
+}
 </script>
 
 <style scoped>
