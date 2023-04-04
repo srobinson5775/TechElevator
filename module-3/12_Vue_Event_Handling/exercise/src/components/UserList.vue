@@ -189,8 +189,8 @@ export default {
       user.status = user.status === 'Active' ? 'Inactive' : 'Active';
     },
     activateUser(){
-      this.selectedUserIds = 
-    }
+      
+    },
 
   
   computed: {
