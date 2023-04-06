@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
+            <input type="checkbox" id="selectAll" v-on:change="checkAll($event)" v-bind:checked="users.length == selectedUserIds.length"/>
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -44,7 +44,7 @@
           v-bind:key="user.id"
           v-bind:class="{ deactivated: user.status === 'Inactive' }">
           <td>
-            <input type="checkbox" v-bind="selectedUserIds" v-bind:id="user.id" v-bind:value="user.id" />
+            <input type="checkbox" v-model="selectedUserIds" v-bind:id="user.id" v-bind:value="user.id" />
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -59,9 +59,9 @@
     </table>
 
     <div class="all-actions">
-      <button>Activate Users</button>
-      <button>Deactivate Users</button>
-      <button>Delete Users</button>
+      <button v-on:click="activateUsers" v-bind:disabled="!isBoxesChecked">Activate Users</button>
+      <button v-on:click="deactivateUsers" v-bind:disabled="!isBoxesChecked">Deactivate Users</button>
+      <button v-on:click="deleteUsers" v-bind:disabled="!isBoxesChecked">Delete Users</button>
     </div>
 
     <button v-on:click="showForm = !showForm">Add New User</button>
@@ -177,21 +177,42 @@ export default {
     resetForm() {
       this.newUser = {}
     },
-    changeStatus(id){
-      let userIndex = this.users.findIndex((user)=> user.id === id)
-      let status = this.users[userIndex].status 
-      status === 'Active' ? 'Inactive' : 'Active';
 
-     //finish this method with what myron gave you in slack
-  },
+    activateUsers(){
+      this.selectedUserIds.forEach((id) =>{
+        this.users[this.findUserById(id)].status = "Active";
+      });
+      this.selectedUserIds = [];
+    },
+    deactivateUsers(){
+      this.selectedUserIds.forEach((id) =>{
+        this.users[this.findUserById(id)].status = "Inactive";
+      });
+      this.selectedUserIds = [];
+    },
+    deleteUsers(){
+      this.selectedUserIds.forEach((id) =>{
+        this.users = this.users.filter((user)=>{
+          return user.id != id;
+        });
+      });
+      this.selectedUserIds = [];
+    },
     toggleStatus(id){
-      let user = this.users.find(user => user.id === id);
-      user.status = user.status === 'Active' ? 'Inactive' : 'Active';
+      let index = this.findUserById(id);
+      this.users[index].status = this.users[index].status === "Active" ? "Inactive" : "Active";
     },
-    activateUser(){
-      
+    findUserById(id){
+      return this.users.findIndex((user) => user.id == id)
     },
-
+    checkAll(event){
+      if(event.target.checked){
+        this.selectedUserIds = this.users.map(user => user.id);
+      } else {
+        this.selectedUserIds = [];
+      }
+    }
+  },
   
   computed: {
     filteredList() {
@@ -230,10 +251,15 @@ export default {
         );
       }
       return filteredUsers;
+    },
+    isBoxesChecked(){
+      let numberOfChecked = this.selectedUserIds.length;
+      return numberOfChecked > 0
+    
     }
   }
 }
-}
+
 </script>
 
 <style scoped>
