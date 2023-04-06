@@ -3,7 +3,7 @@
     <input class="title-input" type="text" placeholder="Title" v-model="book.title" />
     <input class="author-input" type="text" placeholder="Author" v-model="book.author" />
     <input class="isbn-input" type="text" placeholder="ISBN" v-model="book.isbn" />
-    <button>Save</button>
+    <button v-on:click="myBooksList">Save</button>
   </form>
 </template>
 
@@ -29,6 +29,9 @@ export default {
                 read: false,
                 isbn: ''
             };
+        },
+        myBooksList() {
+            this.$router.push({path: '/myBooks'});
         }
     }
 }
