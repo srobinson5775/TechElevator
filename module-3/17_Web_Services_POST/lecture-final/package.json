@@ -1,0 +1,34 @@
+{
+  "name": "kanban",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "npm-run-all --parallel json-server start",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "generate": "json-server ./db/generator.js",
+    "json-server": "json-server ./db/kanban.json --delay 1000 --routes ./db/routes.json",
+    "start": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.9.1",
+    "json-server": "^0.17.1",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "5.0.8",
+    "@vue/cli-plugin-vuex": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "eslint": "^8.26.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "moment": "^2.29.1",
+    "npm-run-all": "^4.1.5",
+    "vue-loader-v16": "npm:vue-loader@16.1.2",
+    "vue-template-compiler": "^2.6.12"
+  }
+}
