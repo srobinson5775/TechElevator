@@ -1,5 +1,29 @@
 <template>
-  <div>
+  <div class="container">
+      <header>Header Content</header>
+      <nav>
+          <div class="content">
+              Navigation
+            <div><router-link :to="{name: 'home'}">Home</router-link></div>
+            <div><router-link :to="{name: 'about'}">About</router-link></div>
+            <div><router-link :to="{name: 'contact'}">Contact Us</router-link></div>
+          </div>
+      </nav>
+      <main>
+          <div>
+              <router-view></router-view>
+          </div>
+      </main>
+      <aside>
+          <div class="content">
+              Sidebar / Info
+          </div>
+      </aside>
+      <footer>
+          <div class="content">
+              Footer content
+          </div>
+      </footer>
     
         
         <!-- different views/pages are displayed/injected here -->
