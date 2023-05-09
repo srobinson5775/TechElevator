@@ -51,11 +51,14 @@ changed String sql from "WHERE employee_id" to "project_id"
 Bug 4
 -----
 Test that demonstrates problem:
-I accidentally fixed the bug before I logged it
-I dont remember which one it is.
+updated_timesheet_has_expected_values_when_retrieved
+
 Expected output:
+updated
 
 Actual output:
+no value specified
 
 How did you fix this bug?
+updatedTimesheet.isBillable(). to specify boolean
 
